@@ -7,8 +7,11 @@ export default {
 				'code': 'Cascadia Code, monospace',
 			},
 			colors: {
-				background: '#E9F8FD',
-				purple: '#4B0082'
+				app: {
+					background: '#E9F8FD',
+					purple: '#4B0082',
+					red: '#AD2F55'
+				}
 			}
 		},
 	},
