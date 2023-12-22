@@ -1,0 +1,157 @@
+---
+import { Image } from 'astro:assets'
+
+import Layout from '../layouts/Layout.astro'
+
+import BrowserFrame from '../components/BrowserFrame.astro'
+import ClockBox from '../components/ClockBox.astro'
+import HackOManiaLogo from '../components/HackOManiaLogo.astro'
+import AlbumCarousel from '../components/AlbumCarousel.astro'
+
+import aisg from '../assets/sponsors/aisg.png'
+import google from '../assets/sponsors/google.png'
+import grab from '../assets/sponsors/grab.png'
+import rakuten from '../assets/sponsors/rakuten.png'
+import redbull from '../assets/sponsors/redbull.png'
+import spdigital from '../assets/sponsors/spdigital.png'
+
+import geekshacking from '../assets/geekshacking.png'
+---
+
+<Layout title="Hackomania 2024">
+  <main class="space-y-20 container mx-auto pb-32">
+    <header class="py-8">
+      <a href="/" class="font-code font-semibold text-app-purple"> HackOMania 2024</a>
+    </header>
+
+    <section class="py-40 flex flex-col items-center space-y-8">
+      <div class="w-[300px] md:w-[600px]">
+        <HackOManiaLogo />
+      </div>
+
+      <div class="flex space-x-4">
+        <ClockBox>00</ClockBox>
+        <ClockBox>00</ClockBox>
+        <ClockBox>00</ClockBox>
+        <ClockBox>00</ClockBox>
+      </div>
+
+      <button type="button" class="text-white uppercase font-code bg-app-red hover:rose-800 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:hover:bg-rose-700 focus:outline-none">
+        Register
+      </button>
+    </section>
+
+    <section class="space-y-6">
+      <div class="border-l-8 border-solid border-l-app-red pl-6">
+        <h2 class="text-6xl text-app-purple font-code font-bold">
+          HackOMania
+          <br />
+           2024
+        </h2>
+      </div>
+
+      <p class="font-code">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+        nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+        sunt in culpa qui officia deserunt mollit anorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        quis nostrud exercitation ullamco laboris nisi ut
+      </p>
+    </section>
+
+    <section class="space-y-6">
+      <div class="border-l-8 border-solid border-l-app-red pl-6">
+        <h2 class="text-6xl text-app-purple font-code font-bold">Past Sponsors</h2>
+      </div>
+
+      <BrowserFrame>
+        <div class="p-10 grid grid-cols-2 md:grid-cols-2">
+          <Image src={aisg} alt="AI Singapore" class="object-contain" />
+          <Image src={google} alt="Google" class="object-contain" />
+          <Image src={grab} alt="Grab" class="object-contain" />
+          <Image src={rakuten} alt="Rakuten" class="object-contain" />
+          <Image src={redbull} alt="Redbull" class="object-contain" />
+          <Image src={spdigital} alt="SP Digital" class="object-contain" />
+        </div>
+      </BrowserFrame>
+    </section>
+
+    <section class="space-y-6">
+      <div class="border-l-8 border-solid border-l-app-red pl-6">
+        <h2 class="text-6xl text-app-purple font-code font-bold">Album</h2>
+      </div>
+
+      <AlbumCarousel />
+    </section>
+
+    <section class="space-y-6">
+      <div class="border-l-8 border-solid border-l-app-red pl-6">
+        <h2 class="text-6xl text-app-purple font-code font-bold">Venue</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.819799045889!2d103.8477107128912!3d1.2818841987005645!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da19a42f7f2a83%3A0x3ff65bbf62f7e45a!2sRakuten%20Asia!5e0!3m2!1sen!2ssg!4v1703227080676!5m2!1sen!2ssg"
+            class="w-full h-[500px]"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+
+        <div class="font-code text-3xl space-y-6">
+          <div class="flex justify-between">
+            <span class="text-app-blue">Date:</span>
+            <span>02 February 2024</span>
+          </div>
+
+          <div class="flex justify-between">
+            <span class="text-app-blue">Time:</span>
+            <span>10:00AM - 5.00PM</span>
+          </div>
+
+          <div class="flex justify-between">
+            <span class="text-app-blue">Venue:</span>
+            <span>NUS Enterprise</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="space-y-6 flex flex-col md:flex-row gap-10">
+      <Image src={geekshacking} alt="GeeksHacking" class="min-w-[300px] w-[400px] mx-auto object-contain" />
+
+      <div class="space-y-6">
+        <div class="border-l-8 border-solid border-l-app-red pl-6">
+          <h2 class="text-6xl text-app-purple font-code font-bold">GeeksHacking</h2>
+        </div>
+
+        <p class="font-code">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+          nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+          proident, sunt in culpa qui officia deserunt mollit anorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+        </p>
+      </div>
+    </section>
+
+    <section class="space-y-6">
+      <div class="border-l-8 border-solid border-l-app-red pl-6">
+        <h2 class="text-6xl text-app-purple font-code font-bold">Contact Us!</h2>
+      </div>
+
+      <p class="font-code">
+        For general enquiries
+        <br />
+        <br />
+         Drop us and email at <a class="text-app-red" href="mailto:contact@geekshacking.com">contact@geekshacking.com</a> or contact us through our <a class="text-app-red">Facebook page</a>.
+        <br />
+        <br />
+         For Sponsorship
+        <br />
+        <br />
+         Please contact <a class="text-app-red" href="mailto:sponsor@geekshacking.com">sponsor@geekshacking.com</a> for sponsorship enquiries.
+      </p>
+    </section>
+  </main>
+</Layout>
