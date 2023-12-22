@@ -10,7 +10,8 @@ export default {
 				app: {
 					background: '#E9F8FD',
 					purple: '#4B0082',
-					red: '#AD2F55'
+					blue: '#45AACB',
+					red: '#AD2F55',
 				}
 			}
 		},
