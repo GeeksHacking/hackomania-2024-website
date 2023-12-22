@@ -1,10 +1,12 @@
 ---
 import { Image } from 'astro:assets'
 
+import Layout from '../layouts/Layout.astro'
+
 import BrowserFrame from '../components/BrowserFrame.astro'
 import ClockBox from '../components/ClockBox.astro'
 import HackOManiaLogo from '../components/HackOManiaLogo.astro'
-import Layout from '../layouts/Layout.astro'
+import AlbumCarousel from '../components/AlbumCarousel.astro'
 
 import aisg from '../assets/sponsors/aisg.png'
 import google from '../assets/sponsors/google.png'
@@ -17,13 +19,13 @@ import geekshacking from '../assets/geekshacking.png'
 ---
 
 <Layout title="Hackomania 2024">
-  <main class="h-screen space-y-20 container mx-auto">
+  <main class="space-y-20 container mx-auto pb-32">
     <header class="py-8">
       <a href="/" class="font-code font-semibold text-app-purple"> HackOMania 2024</a>
     </header>
 
-    <section class="py-40 flex flex-col items-center space-y-6">
-      <div class="w-80">
+    <section class="py-40 flex flex-col items-center space-y-8">
+      <div class="w-[300px] md:w-[600px]">
         <HackOManiaLogo />
       </div>
 
@@ -62,16 +64,12 @@ import geekshacking from '../assets/geekshacking.png'
       </div>
 
       <BrowserFrame>
-        <div class="p-4 flex flex-wrap">
+        <div class="p-10 grid grid-cols-2 md:grid-cols-2">
           <Image src={aisg} alt="AI Singapore" class="object-contain" />
-          <div class="flex">
-            <Image src={google} alt="Google" class="object-contain" />
-            <Image src={grab} alt="Grab" class="object-contain" />
-          </div>
-          <div class="flex">
-            <Image src={rakuten} alt="Rakuten" class="object-contain" />
-            <Image src={redbull} alt="Redbull" class="object-contain" />
-          </div>
+          <Image src={google} alt="Google" class="object-contain" />
+          <Image src={grab} alt="Grab" class="object-contain" />
+          <Image src={rakuten} alt="Rakuten" class="object-contain" />
+          <Image src={redbull} alt="Redbull" class="object-contain" />
           <Image src={spdigital} alt="SP Digital" class="object-contain" />
         </div>
       </BrowserFrame>
@@ -81,6 +79,8 @@ import geekshacking from '../assets/geekshacking.png'
       <div class="border-l-8 border-solid border-l-app-red pl-6">
         <h2 class="text-6xl text-app-purple font-code font-bold">Album</h2>
       </div>
+
+      <AlbumCarousel />
     </section>
 
     <section class="space-y-6">
