@@ -8,12 +8,17 @@ import ClockBox from '../components/ClockBox.astro'
 import HackOManiaLogo from '../components/HackOManiaLogo.astro'
 import AlbumCarousel from '../components/AlbumCarousel.astro'
 
+import rakutenVenue from '../assets/sponsors/venue/rakuten.png'
+import googleVenue from '../assets/sponsors/venue/google.png'
+
 import aisg from '../assets/sponsors/aisg.png'
 import google from '../assets/sponsors/google.png'
 import grab from '../assets/sponsors/grab.png'
+import paypal from '../assets/sponsors/paypal.png'
 import rakuten from '../assets/sponsors/rakuten.png'
 import redbull from '../assets/sponsors/redbull.png'
 import spdigital from '../assets/sponsors/spdigital.png'
+import wanted from '../assets/sponsors/wanted.png'
 
 import geekshacking from '../assets/geekshacking.png'
 ---
@@ -60,17 +65,32 @@ import geekshacking from '../assets/geekshacking.png'
 
     <section class="space-y-6">
       <div class="border-l-8 border-solid border-l-app-red pl-6">
+        <h2 class="text-6xl text-app-purple font-code font-bold">Venue Sponsors</h2>
+      </div>
+
+      <BrowserFrame>
+        <div class="p-10 grid grid-cols-1 md:grid-cols-1 place-items-center gap-10">
+          <Image src={rakutenVenue} alt="AI Singapore" class="object-contain" />
+          <Image src={googleVenue} alt="Google" class="object-contain" />
+        </div>
+      </BrowserFrame>
+    </section>
+
+    <section class="space-y-6">
+      <div class="border-l-8 border-solid border-l-app-red pl-6">
         <h2 class="text-6xl text-app-purple font-code font-bold">Past Sponsors</h2>
       </div>
 
       <BrowserFrame>
-        <div class="p-10 grid grid-cols-2 md:grid-cols-2">
+        <div class="p-10 grid grid-cols-3 md:grid-cols-3 place-items-center gap-10">
           <Image src={aisg} alt="AI Singapore" class="object-contain" />
-          <Image src={google} alt="Google" class="object-contain" />
           <Image src={grab} alt="Grab" class="object-contain" />
           <Image src={rakuten} alt="Rakuten" class="object-contain" />
-          <Image src={redbull} alt="Redbull" class="object-contain" />
+          <Image src={paypal} alt="PayPal" class="object-contain" />
           <Image src={spdigital} alt="SP Digital" class="object-contain" />
+          <Image src={redbull} alt="Redbull" class="object-contain" />
+          <Image src={wanted} alt="Wanted" class="object-contain" />
+          <Image src={google} alt="Google" class="object-contain col-span-2" />
         </div>
       </BrowserFrame>
     </section>
