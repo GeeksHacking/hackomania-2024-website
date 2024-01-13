@@ -3,17 +3,22 @@ import { Image } from 'astro:assets'
 
 import Layout from '../layouts/Layout.astro'
 
-// import BrowserFrame from '../components/BrowserFrame.astro'
-// import ClockBox from '../components/ClockBox.astro'
+import BrowserFrame from '../components/BrowserFrame.astro'
+import ClockBox from '../components/ClockBox.astro'
 import HackOManiaLogo from '../components/HackOManiaLogo.astro'
-// import AlbumCarousel from '../components/AlbumCarousel.astro'
+import AlbumCarousel from '../components/AlbumCarousel.astro'
 
-// import aisg from '../assets/sponsors/aisg.png'
-// import google from '../assets/sponsors/google.png'
-// import grab from '../assets/sponsors/grab.png'
-// import rakuten from '../assets/sponsors/rakuten.png'
-// import redbull from '../assets/sponsors/redbull.png'
-// import spdigital from '../assets/sponsors/spdigital.png'
+import rakutenVenue from '../assets/sponsors/venue/rakuten.png'
+import googleVenue from '../assets/sponsors/venue/google.png'
+
+import aisg from '../assets/sponsors/aisg.png'
+import google from '../assets/sponsors/google.png'
+import grab from '../assets/sponsors/grab.png'
+import paypal from '../assets/sponsors/paypal.png'
+import rakuten from '../assets/sponsors/rakuten.png'
+import redbull from '../assets/sponsors/redbull.png'
+import spdigital from '../assets/sponsors/spdigital.png'
+import wanted from '../assets/sponsors/wanted.png'
 
 import geekshacking from '../assets/geekshacking.png'
 ---
@@ -29,21 +34,25 @@ import geekshacking from '../assets/geekshacking.png'
         <HackOManiaLogo />
       </div>
 
-      <!-- <div class="flex space-x-4">
+      <div class="flex space-x-4">
         <ClockBox>00</ClockBox>
         <ClockBox>00</ClockBox>
         <ClockBox>00</ClockBox>
         <ClockBox>00</ClockBox>
-      </div> -->
+      </div>
 
       <button type="button" class="text-white uppercase font-code bg-app-red hover:rose-800 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:hover:bg-rose-700 focus:outline-none">
-        Registration coming soon!
+        Register
       </button>
     </section>
 
     <section class="space-y-6">
       <div class="border-l-8 border-solid border-l-app-red pl-6">
-        <h2 class="text-6xl text-app-purple font-code font-bold">HackOMania 2024</h2>
+        <h2 class="text-6xl text-app-purple font-code font-bold">
+          HackOMania
+          <br />
+           2024
+        </h2>
       </div>
 
       <p class="font-code">
@@ -52,30 +61,45 @@ import geekshacking from '../assets/geekshacking.png'
       </p>
     </section>
 
-    <!-- <section class="space-y-6">
+    <section class="space-y-6">
+      <div class="border-l-8 border-solid border-l-app-red pl-6">
+        <h2 class="text-6xl text-app-purple font-code font-bold">Venue Sponsors</h2>
+      </div>
+
+      <BrowserFrame>
+        <div class="p-10 grid grid-cols-1 md:grid-cols-1 place-items-center gap-10">
+          <Image src={rakutenVenue} alt="AI Singapore" class="object-contain" />
+          <Image src={googleVenue} alt="Google" class="object-contain" />
+        </div>
+      </BrowserFrame>
+    </section>
+
+    <section class="space-y-6">
       <div class="border-l-8 border-solid border-l-app-red pl-6">
         <h2 class="text-6xl text-app-purple font-code font-bold">Past Sponsors</h2>
       </div>
 
       <BrowserFrame>
-        <div class="p-10 grid grid-cols-2 md:grid-cols-2">
+        <div class="p-10 grid grid-cols-3 md:grid-cols-3 place-items-center gap-10">
           <Image src={aisg} alt="AI Singapore" class="object-contain" />
-          <Image src={google} alt="Google" class="object-contain" />
           <Image src={grab} alt="Grab" class="object-contain" />
           <Image src={rakuten} alt="Rakuten" class="object-contain" />
-          <Image src={redbull} alt="Redbull" class="object-contain" />
+          <Image src={paypal} alt="PayPal" class="object-contain" />
           <Image src={spdigital} alt="SP Digital" class="object-contain" />
+          <Image src={redbull} alt="Redbull" class="object-contain" />
+          <Image src={wanted} alt="Wanted" class="object-contain" />
+          <Image src={google} alt="Google" class="object-contain col-span-2" />
         </div>
       </BrowserFrame>
-    </section> -->
+    </section>
 
-    <!-- <section class="space-y-6">
+    <section class="space-y-6">
       <div class="border-l-8 border-solid border-l-app-red pl-6">
         <h2 class="text-6xl text-app-purple font-code font-bold">Album</h2>
       </div>
 
       <AlbumCarousel />
-    </section> -->
+    </section>
 
     <section class="space-y-6">
       <div class="border-l-8 border-solid border-l-app-red pl-6">
@@ -96,23 +120,23 @@ import geekshacking from '../assets/geekshacking.png'
         <div class="font-code text-3xl space-y-6">
           <div class="flex justify-between">
             <span class="text-app-blue">Date:</span>
-            <span>6 - 7 April 2024</span>
+            <span>02 February 2024</span>
           </div>
 
           <div class="flex justify-between">
             <span class="text-app-blue">Time:</span>
-            <span>8:00AM - 6:00PM</span>
+            <span>10:00AM - 5.00PM</span>
           </div>
 
           <div class="flex justify-between">
             <span class="text-app-blue">Venue:</span>
-            <span>Rakuten Asia, CapitaGreen</span>
+            <span>NUS Enterprise</span>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="space-y-6 grid grid-cols-1 md:grid-cols-2">
+    <section class="space-y-6 flex flex-col md:flex-row gap-10">
       <Image src={geekshacking} alt="GeeksHacking" class="min-w-[300px] w-[400px] mx-auto object-contain" />
 
       <div class="space-y-6">
@@ -121,8 +145,10 @@ import geekshacking from '../assets/geekshacking.png'
         </div>
 
         <p class="font-code">
-          A non-profit where passionate software developers, user experience designers, computer engineers and technopreneurs give back to the tech community using our skills and experiences. We want
-          to create innovative and impactful solutions that will make a difference in the world today.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+          nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+          proident, sunt in culpa qui officia deserunt mollit anorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
         </p>
       </div>
     </section>
