@@ -4,6 +4,7 @@ import { Image, getImage } from 'astro:assets'
 import Layout from '../layouts/Layout.astro'
 
 import BrowserFrame from '../components/BrowserFrame.astro'
+import TeamProfileAvatar from '../components/TeamProfileAvatar.astro'
 // import ClockBox from '../components/ClockBox.astro'
 import AlbumCarousel from '../components/AlbumCarousel.astro'
 import HackOManiaLogo from '../components/HackOManiaLogo.astro'
@@ -132,7 +133,22 @@ const background = await getImage({ src: cloud })
       </div>
     </section>
 
-    <section id="geekshacking" class="scroll-m-16 space-y-6 flex flex-col md:flex-row gap-10">
+    <section id="team" class="space-y-6">
+      <div class="border-l-8 border-solid border-l-app-red pl-6">
+        <h2 class="text-4xl md:text-6xl text-app-purple font-code font-bold">Our team</h2>
+      </div>
+      <!-- TODO: update with actual team data later on -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-5">
+          <TeamProfileAvatar name="James Lim" role="Design IC" profileImage='https://media.licdn.com/dms/image/C5103AQG1MciGsnOKKw/profile-displayphoto-shrink_800_800/0/1516951038556?e=1710374400&v=beta&t=Ls1KiPIMpUIzozemVBz8EDy5dPT1GQTlfy29P66vEL0' links={{'linkedin': 'https://www.linkedin.com/in/james-tsui-45ab08120'}} />
+          <TeamProfileAvatar name="James Lim" role="Design IC" profileImage='https://media.licdn.com/dms/image/C5103AQG1MciGsnOKKw/profile-displayphoto-shrink_800_800/0/1516951038556?e=1710374400&v=beta&t=Ls1KiPIMpUIzozemVBz8EDy5dPT1GQTlfy29P66vEL0' links={{'linkedin': 'https://www.linkedin.com/in/james-tsui-45ab08120'}} />
+          <TeamProfileAvatar name="James Lim" role="Design IC" profileImage='https://media.licdn.com/dms/image/C5103AQG1MciGsnOKKw/profile-displayphoto-shrink_800_800/0/1516951038556?e=1710374400&v=beta&t=Ls1KiPIMpUIzozemVBz8EDy5dPT1GQTlfy29P66vEL0' links={{'linkedin': 'https://www.linkedin.com/in/james-tsui-45ab08120'}} />
+          <TeamProfileAvatar name="James Lim" role="Design IC" profileImage='https://media.licdn.com/dms/image/C5103AQG1MciGsnOKKw/profile-displayphoto-shrink_800_800/0/1516951038556?e=1710374400&v=beta&t=Ls1KiPIMpUIzozemVBz8EDy5dPT1GQTlfy29P66vEL0' links={{'linkedin': 'https://www.linkedin.com/in/james-tsui-45ab08120'}} />
+          <TeamProfileAvatar name="James Lim" role="Design IC" profileImage='https://media.licdn.com/dms/image/C5103AQG1MciGsnOKKw/profile-displayphoto-shrink_800_800/0/1516951038556?e=1710374400&v=beta&t=Ls1KiPIMpUIzozemVBz8EDy5dPT1GQTlfy29P66vEL0' links={{'linkedin': 'https://www.linkedin.com/in/james-tsui-45ab08120'}} />
+          <TeamProfileAvatar name="James Lim" role="Design IC" profileImage='https://media.licdn.com/dms/image/C5103AQG1MciGsnOKKw/profile-displayphoto-shrink_800_800/0/1516951038556?e=1710374400&v=beta&t=Ls1KiPIMpUIzozemVBz8EDy5dPT1GQTlfy29P66vEL0' links={{'linkedin': 'https://www.linkedin.com/in/james-tsui-45ab08120'}} />
+        </div>
+    </section>
+
+    <section id="geekshacking" class="space-y-6 flex flex-col md:flex-row gap-10">
       <Image src={geekshacking} alt="GeeksHacking" class="min-w-[300px] w-[400px] mx-auto object-contain" />
 
       <div class="space-y-6">

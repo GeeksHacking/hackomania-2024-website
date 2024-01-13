@@ -13,6 +13,9 @@ export default {
 					blue: '#45AACB',
 					red: '#AD2F55',
 				}
+			},
+			borderRadius: {
+				'2.5xl': '20px',
 			}
 		},
 	},
