@@ -4,7 +4,7 @@ import { Image, getImage } from 'astro:assets'
 import Layout from '../layouts/Layout.astro'
 
 import BrowserFrame from '../components/BrowserFrame.astro'
-// import ClockBox from '../components/ClockBox.astro'
+import Countdown from '../components/Countdown.astro'
 import AlbumCarousel from '../components/AlbumCarousel.astro'
 import HackOManiaLogo from '../components/HackOManiaLogo.astro'
 
@@ -34,12 +34,9 @@ const background = await getImage({ src: cloud })
         <HackOManiaLogo />
       </div>
 
-      <!-- <div class="flex space-x-4">
-        <ClockBox>00</ClockBox>
-        <ClockBox>00</ClockBox>
-        <ClockBox>00</ClockBox>
-        <ClockBox>00</ClockBox>
-      </div> -->
+      <div class="flex space-x-4">
+        <Countdown />
+      </div>
 
       <button type="button" class="text-white uppercase font-code bg-app-red hover:rose-800 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:hover:bg-rose-700 focus:outline-none">
         Registration coming soon!
