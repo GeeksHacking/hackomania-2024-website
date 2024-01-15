@@ -17,6 +17,10 @@
     document.getElementById('seconds').innerText = `${seconds} seconds`;
   }
 
+  // Initial time rendered
+  calculateTimeRemaining();
+
+  // To update the rendered data every second
   setInterval(calculateTimeRemaining, 1000);
 </script>
 
