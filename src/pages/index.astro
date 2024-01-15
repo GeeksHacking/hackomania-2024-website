@@ -23,8 +23,19 @@ import wanted from '../assets/sponsors/wanted.png'
 
 import cloud from '../assets/background/cloud.png'
 import geekshacking from '../assets/geekshacking.png'
+import team from '../assets/team.json'
 
 const background = await getImage({ src: cloud })
+const teamMembers = team.map(item => ({
+  name: item.Name,
+  profileImage: item['Profile Image'],
+  role: `${item.Team} ${item.Role && item.Role.length > 0 ? item.Role : "Team Member"}`,
+  links: {
+    linkedin: item.LinkedIn,
+    github: item.GitHub,
+    twitter: item.Twitter
+  }
+}))
 ---
 
 <Layout title="Hackomania 2024">
@@ -137,14 +148,10 @@ const background = await getImage({ src: cloud })
       <div class="border-l-8 border-solid border-l-app-red pl-6">
         <h2 class="text-4xl md:text-6xl text-app-purple font-code font-bold">Our team</h2>
       </div>
-      <!-- TODO: update with actual team data later on -->
       <div class="grid grid-cols-2 md:grid-cols-4 gap-5">
-          <TeamProfileAvatar name="James Lim" role="Design IC" profileImage='https://media.licdn.com/dms/image/C5103AQG1MciGsnOKKw/profile-displayphoto-shrink_800_800/0/1516951038556?e=1710374400&v=beta&t=Ls1KiPIMpUIzozemVBz8EDy5dPT1GQTlfy29P66vEL0' links={{'linkedin': 'https://www.linkedin.com/in/james-tsui-45ab08120'}} />
-          <TeamProfileAvatar name="James Lim" role="Design IC" profileImage='https://media.licdn.com/dms/image/C5103AQG1MciGsnOKKw/profile-displayphoto-shrink_800_800/0/1516951038556?e=1710374400&v=beta&t=Ls1KiPIMpUIzozemVBz8EDy5dPT1GQTlfy29P66vEL0' links={{'linkedin': 'https://www.linkedin.com/in/james-tsui-45ab08120'}} />
-          <TeamProfileAvatar name="James Lim" role="Design IC" profileImage='https://media.licdn.com/dms/image/C5103AQG1MciGsnOKKw/profile-displayphoto-shrink_800_800/0/1516951038556?e=1710374400&v=beta&t=Ls1KiPIMpUIzozemVBz8EDy5dPT1GQTlfy29P66vEL0' links={{'linkedin': 'https://www.linkedin.com/in/james-tsui-45ab08120'}} />
-          <TeamProfileAvatar name="James Lim" role="Design IC" profileImage='https://media.licdn.com/dms/image/C5103AQG1MciGsnOKKw/profile-displayphoto-shrink_800_800/0/1516951038556?e=1710374400&v=beta&t=Ls1KiPIMpUIzozemVBz8EDy5dPT1GQTlfy29P66vEL0' links={{'linkedin': 'https://www.linkedin.com/in/james-tsui-45ab08120'}} />
-          <TeamProfileAvatar name="James Lim" role="Design IC" profileImage='https://media.licdn.com/dms/image/C5103AQG1MciGsnOKKw/profile-displayphoto-shrink_800_800/0/1516951038556?e=1710374400&v=beta&t=Ls1KiPIMpUIzozemVBz8EDy5dPT1GQTlfy29P66vEL0' links={{'linkedin': 'https://www.linkedin.com/in/james-tsui-45ab08120'}} />
-          <TeamProfileAvatar name="James Lim" role="Design IC" profileImage='https://media.licdn.com/dms/image/C5103AQG1MciGsnOKKw/profile-displayphoto-shrink_800_800/0/1516951038556?e=1710374400&v=beta&t=Ls1KiPIMpUIzozemVBz8EDy5dPT1GQTlfy29P66vEL0' links={{'linkedin': 'https://www.linkedin.com/in/james-tsui-45ab08120'}} />
+        {teamMembers.map(member => (
+          <TeamProfileAvatar name={member.name} role={member.role} profileImage={member.profileImage} links={member.links} />
+        ))}
         </div>
     </section>
 
