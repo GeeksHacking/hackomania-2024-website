@@ -3,7 +3,7 @@
 
   function calculateTimeRemaining() {
     const now = new Date();
-    const timeDifference = endDate - now;
+    const timeDifference : number = endDate.getTime() - now.getTime();
 
     const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
     const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
@@ -11,10 +11,22 @@
     const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
 
     // Update the CountdownParagraph components
-    document.getElementById('days').innerText = `${days} days`;
-    document.getElementById('hours').innerText = `${hours} hours`;
-    document.getElementById('minutes').innerText = `${minutes} minutes`;
-    document.getElementById('seconds').innerText = `${seconds} seconds`;
+    const daysElement = document.getElementById('days');
+    if (daysElement) {
+      daysElement.innerText = `${days} days`;
+    }
+    const hoursElement = document.getElementById('hours');
+    if (hoursElement) {
+      hoursElement.innerText = `${hours} hours`;
+    }
+    const minutesElement = document.getElementById('minutes');
+    if (minutesElement) {
+      minutesElement.innerText = `${minutes} minutes`;
+    }
+    const secondsElement = document.getElementById('seconds');
+    if (secondsElement) {
+      secondsElement.innerText = `${seconds} seconds`;
+    }
   }
 
   // Initial time rendered
