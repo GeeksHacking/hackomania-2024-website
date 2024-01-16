@@ -6,7 +6,7 @@ const { navItems } = Astro.props;
 ---
 
 <div
-	class="sticky top-0 z-10 w-full flex flex-row gap-4 items-center p-4 justify-between bg-app-background z-50">
+	class="sticky top-0 w-full flex flex-row gap-4 items-center p-4 justify-between bg-app-background z-50">
 	<header>
 		<a
 			href="/"
@@ -16,8 +16,7 @@ const { navItems } = Astro.props;
 	</header>
 
 	<button
-		class="block lg:hidden"
-		onclick="document.querySelector('nav').classList.toggle('opacity-0')">
+		class="nav-hamburger-menu-button block lg:hidden">
 		<svg
 			width="30"
 			height="30"
@@ -34,13 +33,12 @@ const { navItems } = Astro.props;
 
   <!-- Nav bar shown on mobile/tablet viewport -->
 	<nav
-		class="lg:hidden absolute top-10 right-0 p-4 items-start justify-center flex flex-col gap-4 opacity-0 bg-white rounded shadow transition-all">
+		class="lg:hidden absolute top-10 right-0 p-4 items-start justify-center flex flex-col gap-4 opacity-0 hidden bg-white rounded shadow transition-all">
 		{
 			navItems.map((item) => (
 				<a
 					href={`#${item}`}
-          onclick="document.querySelector('nav').classList.toggle('opacity-0')"
-					class="group flex flex-row items-center gap-1 font-code font-semibold text-black">
+					class="nav-item group flex flex-row items-center gap-1 font-code font-semibold text-black">
 					<span>{item.toUpperCase()}</span>
 				</a>
 			))
@@ -54,7 +52,7 @@ const { navItems } = Astro.props;
 			navItems.map((item) => (
 				<a
 					href={`#${item}`}
-					class="group flex flex-row items-center gap-1 font-code font-semibold text-black">
+					class="nav-item group flex flex-row items-center gap-1 font-code font-semibold text-black">
 					<svg
 						class="group-hover:visible invisible"
 						width="12"
@@ -73,3 +71,24 @@ const { navItems } = Astro.props;
 		}
 	</nav>
 </div>
+<script>
+	const onNavItemClick = () => {
+	const navbarEl = document.querySelector('nav')
+	if (navbarEl) {
+		if (navbarEl.classList.contains('hidden')) {
+			navbarEl.classList.remove('hidden')
+			navbarEl.classList.remove('opacity-0')
+		}
+		else {
+			navbarEl.classList.add('opacity-0')
+			setTimeout(() => {
+				navbarEl.classList.add('hidden')
+			}, 300);
+		}
+	}
+}
+	document.querySelectorAll('.nav-item').forEach((el) => {
+		el.addEventListener('click', onNavItemClick)
+	})
+	document.querySelector('.nav-hamburger-menu-button')?.addEventListener('click', onNavItemClick)
+</script>
