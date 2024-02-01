@@ -3,13 +3,12 @@ import { Image } from 'astro:assets'
 
 import 'swiper/css/bundle'
 
-import image1 from '../assets/album/image1.png'
-import image2 from '../assets/album/image2.png'
+const images = await Astro.glob('../assets/album/*.{png,jpeg}')
 ---
 
 <script>
-  import { Swiper } from 'swiper';
-  import { Navigation, Pagination } from 'swiper/modules';
+  import { Swiper } from 'swiper'
+  import { Navigation, Pagination } from 'swiper/modules'
 
   new Swiper('.swiper', {
     modules: [Navigation, Pagination],
@@ -28,12 +27,15 @@ import image2 from '../assets/album/image2.png'
 
 <div class="swiper">
   <div class="swiper-wrapper">
-    <div class="swiper-slide p-10">
-      <Image src={image1} alt="Hackomania 2019" class="object-cover" />
-    </div>
-    <div class="swiper-slide p-10">
-      <Image src={image2} alt="Hackomania 2019 After Event" class="object-cover" />
-    </div>
+    {
+      images.map((img) => {
+        return (
+          <div class="swiper-slide p-10">
+            <Image src={img.default} alt="HackOMania!" class="object-cover" />
+          </div>
+        )
+      })
+    }
   </div>
   <div class="swiper-pagination"></div>
   <div class="swiper-button-next"></div>
