@@ -28,7 +28,7 @@ const background = await getImage({ src: cloud })
 
 <Layout title="Hackomania 2024">
   <main class="space-y-20 container mx-auto pb-32">
-    <section id="registration" class="py-40 flex flex-col items-center space-y-8 bg-no-repeat bg-cover bg-bottom" style={`background-image: url('${background.src}')`}>
+    <section id="registration" class="flex flex-col h-screen items-center justify-center space-y-8 bg-no-repeat bg-cover bg-bottom" style={`background-image: url('${background.src}')`}>
       <div class="w-[300px] md:w-[600px]">
         <HackOManiaLogo />
       </div>
@@ -44,9 +44,7 @@ const background = await getImage({ src: cloud })
         <button type="button" class="text-white uppercase font-code bg-app-red hover:rose-800 font-medium rounded-lg text-sm px-4 py-2.5 me-2 mb-2 dark:hover:bg-rose-700 focus:outline-none">
           Registration coming soon!
         </button>
-        <button type="button" class="uppercase font-code text-app-red font-semibold hover:text-rose-800 rounded-lg text-sm px-4 py-2.5 me-2 mb-2 focus:outline-none">
-          Visit our 2019 website!
-        </button>
+        <button type="button" class="uppercase font-code text-app-red font-semibold hover:text-rose-800 rounded-lg text-sm px-4 py-2.5 me-2 mb-2 focus:outline-none"> Visit our 2019 website!</button>
       </div>
     </section>
 
@@ -107,9 +105,28 @@ const background = await getImage({ src: cloud })
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div>
+        <div class="space-y-10">
+          <h3 class="uppercase font-code font-semibold text-xl">Pre-event</h3>
+
+          <div class="font-code text-lg space-y-2">
+            <div class="flex justify-between">
+              <span class="text-app-blue">Date:</span>
+              <span class="text-right">23 March 2024</span>
+            </div>
+
+            <div class="flex justify-between">
+              <span class="text-app-blue">Time:</span>
+              <span class="text-right">1:00PM - 6:00PM</span>
+            </div>
+
+            <div class="flex justify-between">
+              <span class="text-app-blue">Venue:</span>
+              <span class="text-right">Google Developer Space</span>
+            </div>
+          </div>
+
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.819799045889!2d103.8477107128912!3d1.2818841987005645!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da19a42f7f2a83%3A0x3ff65bbf62f7e45a!2sRakuten%20Asia!5e0!3m2!1sen!2ssg!4v1703227080676!5m2!1sen!2ssg"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.8288719304883!2d103.79815071182185!3d1.2760468618006011!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da1b5462d8ef69%3A0xb8f399b9068aad7!2sGoogle%20Developers%20Space%2C%20Singapore!5e0!3m2!1sen!2ssg!4v1706754275234!5m2!1sen!2ssg"
             class="w-full h-[500px]"
             style="border:0;"
             allowfullscreen=""
@@ -117,21 +134,33 @@ const background = await getImage({ src: cloud })
             referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
 
-        <div class="font-code text-lg md:text-xl lg:text-3xl space-y-6">
-          <div class="flex justify-between">
-            <span class="text-app-blue">Date:</span>
-            <span class="text-right">6 - 7 April 2024</span>
+        <div class="space-y-10">
+          <h3 class="uppercase font-code font-semibold text-xl">Main event</h3>
+
+          <div class="font-code text-lg space-y-2">
+            <div class="flex justify-between">
+              <span class="text-app-blue">Date:</span>
+              <span class="text-right">6 - 7 April 2024</span>
+            </div>
+
+            <div class="flex justify-between">
+              <span class="text-app-blue">Time:</span>
+              <span class="text-right">8:00AM - 6:00PM</span>
+            </div>
+
+            <div class="flex justify-between">
+              <span class="text-app-blue">Venue:</span>
+              <span class="text-right">Rakuten Asia, CapitaGreen</span>
+            </div>
           </div>
 
-          <div class="flex justify-between">
-            <span class="text-app-blue">Time:</span>
-            <span class="text-right">8:00AM - 6:00PM</span>
-          </div>
-
-          <div class="flex justify-between">
-            <span class="text-app-blue">Venue:</span>
-            <span class="text-right">Rakuten Asia, CapitaGreen</span>
-          </div>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.819799045889!2d103.8477107128912!3d1.2818841987005645!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da19a42f7f2a83%3A0x3ff65bbf62f7e45a!2sRakuten%20Asia!5e0!3m2!1sen!2ssg!4v1703227080676!5m2!1sen!2ssg"
+            class="w-full h-[500px]"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
       </div>
     </section>
