@@ -31,7 +31,7 @@ const images = await Astro.glob('../assets/album/*.{png,jpeg}')
       images.map((img) => {
         return (
           <div class="swiper-slide p-10">
-            <Image src={img.default} alt="HackOMania!" class="object-cover" />
+            <Image src={img.default} alt="HackOMania!" class="object-cover aspect-video!" />
           </div>
         )
       })
