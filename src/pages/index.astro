@@ -4,6 +4,7 @@ import { Image, getImage } from 'astro:assets'
 import Layout from '../layouts/Layout.astro'
 
 import BrowserFrame from '../components/BrowserFrame.astro'
+import TeamProfileAvatar from '../components/TeamProfileAvatar.astro'
 // import ClockBox from '../components/ClockBox.astro'
 import AlbumCarousel from '../components/AlbumCarousel.astro'
 import HackOManiaLogo from '../components/HackOManiaLogo.astro'
@@ -22,8 +23,19 @@ import wanted from '../assets/sponsors/wanted.png'
 
 import cloud from '../assets/background/cloud.png'
 import geekshacking from '../assets/geekshacking.png'
+import team from '../assets/team.json'
 
 const background = await getImage({ src: cloud })
+const teamMembers = team.map(item => ({
+  name: item.Name,
+  profileImage: item['Profile Image'],
+  role: `${item.Team} ${item.Role && item.Role.length > 0 ? item.Role : "Team Member"}`,
+  links: {
+    linkedin: item.LinkedIn,
+    github: item.GitHub,
+    twitter: item.Twitter
+  }
+}))
 ---
 
 <Layout title="Hackomania 2024">
@@ -165,7 +177,18 @@ const background = await getImage({ src: cloud })
       </div>
     </section>
 
-    <section id="geekshacking" class="scroll-m-16 space-y-6 flex flex-col md:flex-row gap-10">
+    <section id="team" class="scroll-m-16 space-y-6">
+      <div class="border-l-8 border-solid border-l-app-red pl-6">
+        <h2 class="text-4xl md:text-6xl text-app-purple font-code font-bold">Our team</h2>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-5">
+        {teamMembers.map(member => (
+          <TeamProfileAvatar name={member.name} role={member.role} profileImage={member.profileImage} links={member.links} />
+        ))}
+        </div>
+    </section>
+
+    <section id="geekshacking" class="space-y-6 flex flex-col md:flex-row gap-10">
       <Image src={geekshacking} alt="GeeksHacking" class="min-w-[300px] w-[400px] mx-auto object-contain" />
 
       <div class="space-y-6">
