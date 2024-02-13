@@ -38,8 +38,8 @@ const images = await Astro.glob('../assets/album/*.{png,jpeg}')
     }
   </div>
   <div class="swiper-pagination"></div>
-  <div class="swiper-button-next"></div>
-  <div class="swiper-button-prev"></div>
+  <button class="swiper-button-next"></button>
+  <button class="swiper-button-prev"></button>
 </div>
 
 <style>
@@ -51,7 +51,6 @@ const images = await Astro.glob('../assets/album/*.{png,jpeg}')
   .swiper-slide {
     text-align: center;
     font-size: 18px;
-    background: #fff;
     display: flex;
     justify-content: center;
     align-items: center;
