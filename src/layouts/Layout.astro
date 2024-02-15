@@ -36,8 +36,10 @@ const navItems = ['registration', 'about', 'sponsors', 'album', 'venue', 'team',
     <title>{title}</title>
   </head>
   <Navbar navItems={navItems} />
-  <body class="px-6 bg-app-background">
-    <slot />
+  <body>
+    <div class="px-6 bg-app-background">
+      <slot />
+    </div>
   </body>
 </html>
 
