@@ -12,16 +12,17 @@ interface Props {
 }
 
 const { name, role, profileImage, links } = Astro.props;
+const roleIdentifier = `role-${name}`
 ---
 <div class="group w-[265px] max-w-full h-40 md:h-[265px] relative bg-white rounded-2.5xl overflow-hidden">
     {profileImage ? <img class="object-cover w-full h-full" src={profileImage} /> : <div class="bg-gray-300 w-full h-full" />}
-    <div id="overlay" class="opacity-0 group-hover:opacity-100 transition-opacity w-[265px] max-w-full h-56 md:h-[265px] left-0 top-0 absolute z-10 bg-black bg-opacity-50 rounded-2.5xl p-4">
-        <div class="flex flex-col w-fit gap-1">
+    <div id="overlay" class="opacity-0 group-hover:opacity-100 transition-opacity w-[265px] max-w-full h-full left-0 top-0 absolute z-10 bg-black bg-opacity-50 rounded-2.5xl p-4 overflow-hidden">
+        <div class="flex flex-col w-fit gap-1 h-full overflow-hidden">
             <div class="flex flex-col w-fit gap-1">
-                <span class="text-white text-lg font-code font-bold">{name}</span>
+                <span class="text-white text-md md:text-lg font-code font-bold">{name}</span>
                 <div class="w-full h-[2px] bg-white" />
             </div>
-            <span class="text-white text-lg font-code">{role}</span>
+            <p id={roleIdentifier} class="text-white text-sm md:text-lg font-code">{role}</p>
         </div>
         <div class="absolute flex flex-row bottom-4 end-4">
             {Object.entries(links).map(([socialMediaType, link]) => (
