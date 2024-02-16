@@ -76,27 +76,39 @@ const teamMembers = team.map(item => ({
         <div class="p-4 md:p-6 lg:p-10 flex flex-col items-center justify-center gap-4">
           <div class="flex items-center justify-center flex-col p-4 md:p-8 lg:p-12">
             <h2 class="text-xl md:text-4xl lg:text-5xl font-semibold text-app-red pb-4 md:pb-12">Platinum Sponsors</h2>
-            <Image src={govtech} alt="GovTech - Stack Community" class="object-contain" />
+            <a class="hover:drop-shadow-xl focus:drop-shadow-2xl rounded" href="https://www.meetup.com/stack-by-govtech-singapore/">
+              <Image src={govtech} alt="GovTech - Stack Community" />
+            </a>
           </div>
           <div class="flex items-center justify-center flex-col p-4 md:p-8 lg:p-12">
             <h2 class="text-xl md:text-4xl lg:text-5xl font-semibold text-app-red pb-4 md:pb-12">Gold Sponsors</h2>
             <div class="flex items-center justify-center flex-col gap-4">
               <div class="flex-1">
-                <Image src={spdigital} alt="SPDigital" class="h-[60px] md:h-[120px] lg:h-[140px] w-auto" />
+                <a class="hover:drop-shadow-xl focus:drop-shadow-2xl rounded" href="https://www.spgroup.com.sg/about-us/careers">
+                  <Image src={spdigital} alt="SPDigital" class="h-[60px] md:h-[120px] lg:h-[140px] w-auto" />
+                </a>
               </div>
               <div class="flex-1">
-                <Image src={ahrefs} alt="Ahrefs" class="h-[60px] md:h-[120px] lg:h-[140px] w-auto object-contain" />
+                <a class="hover:drop-shadow-xl focus:drop-shadow-2xl rounded" href="https://ahrefs.com/jobs">
+                  <Image src={ahrefs} alt="Ahrefs" class="h-[60px] md:h-[120px] lg:h-[140px] w-auto object-contain" />
+                </a>
               </div>
               <div class="flex-1 -mt-4">
-                <Image src={zenika} alt="Zenika" class="h-[100px] md:h-[160px] lg:h-[140px] object-contain" />
+                <a class="hover:drop-shadow-xl focus:drop-shadow-2xl rounded" href="https://www.zenika.com/en-SG/pages/career">
+                  <Image src={zenika} alt="Zenika" class="h-[100px] md:h-[160px] lg:h-[140px] object-contain" />
+                </a>
               </div>
             </div>
           </div>
           <div class="flex items-center justify-center flex-col p-4 md:p-8 lg:p-12">
             <h2 class="text-xl md:text-4xl lg:text-5xl font-semibold text-app-red pb-4 md:pb-12 ">Venue sponsors</h2>
             <div class="flex items-center justify-center flex-col gap-8">
-              <Image src={rakutenVenue} alt="AI Singapore" class="object-contain h-[60px] md:h-[120px] lg:h-[140px] w-auto" />
+              <a class="hover:drop-shadow-xl focus:drop-shadow-2xl rounded" href="https://global.rakuten.com/corp/careers" target="_blank" rel="noreferrer">
+                <Image src={rakutenVenue} alt="AI Singapore" class="object-contain h-[60px] md:h-[120px] lg:h-[140px] w-auto" />
+              </a>
+              <a class="hover:drop-shadow-xl focus:drop-shadow-2xl rounded" href="https://www.google.com/about/careers/applications/locations/sing" target="_blank" rel="noreferrer">
               <Image src={googleVenue} alt="Google" class="object-contain h-[60px] md:h-[120px] lg:h-[140px] w-auto" />
+              </a>
             </div>
           </div>
           </div>
