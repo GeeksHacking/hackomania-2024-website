@@ -26,7 +26,7 @@ const roleIdentifier = `role-${name}`
         </div>
         <div class="absolute flex flex-row bottom-4 end-4">
             {Object.entries(links).map(([socialMediaType, link]) => (
-                link ? <a href={link}>
+                link ? <a target="_blank" href={link}>
                     {socialMediaType === 'linkedin' && <Image class="w-10 h-10 hover:opacity-80" alt="Linkedin profile" src={linkedin} />}
                     {socialMediaType === 'github' && <Image class="w-10 h-10 hover:opacity-80" alt="GitHub profile" src={github} />}
                     {socialMediaType === 'twitter' && <Image class="w-10 h-10 hover:opacity-80" alt="X profile" src={x} />}
