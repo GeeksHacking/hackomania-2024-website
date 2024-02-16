@@ -12,14 +12,10 @@ import HackOManiaLogo from '../components/HackOManiaLogo.astro'
 import googleVenue from '../assets/sponsors/venue/google.png'
 import rakutenVenue from '../assets/sponsors/venue/rakuten.png'
 
-import aisg from '../assets/sponsors/aisg.png'
-import google from '../assets/sponsors/google.png'
-import grab from '../assets/sponsors/grab.png'
-import paypal from '../assets/sponsors/paypal.png'
-import rakuten from '../assets/sponsors/rakuten.png'
-import redbull from '../assets/sponsors/redbull.png'
-import spdigital from '../assets/sponsors/spdigital.png'
-import wanted from '../assets/sponsors/wanted.png'
+import govtech from '../assets/sponsors/govtech.png'
+import spdigital from '../assets/sponsors/spd_logo.svg'
+import ahrefs from '../assets/sponsors/ahrefs.png'
+import zenika from '../assets/sponsors/zenika.png'
 
 import cloud from '../assets/background/cloud.png'
 import geekshacking from '../assets/geekshacking.png'
@@ -73,33 +69,37 @@ const teamMembers = team.map(item => ({
 
     <section id="sponsors" class="scroll-m-16 space-y-6">
       <div class="border-l-8 border-solid border-l-app-red pl-6">
-        <h2 class="text-4xl md:text-6xl text-app-purple font-code font-bold">Venue Sponsors</h2>
+        <h2 class="text-4xl md:text-6xl text-app-purple font-code font-bold">Sponsors</h2>
       </div>
 
       <BrowserFrame>
-        <div class="p-4 md:p-6 lg:p-10 grid grid-cols-1 grid-rows-2 place-items-center gap-10">
-          <Image src={rakutenVenue} alt="AI Singapore" class="object-contain" />
-          <Image src={googleVenue} alt="Google" class="object-contain" />
-        </div>
-      </BrowserFrame>
-    </section>
-
-    <section id="past-sponsers" class="scroll-m-16 space-y-6">
-      <div class="border-l-8 border-solid border-l-app-red pl-6">
-        <h2 class="text-4xl md:text-6xl text-app-purple font-code font-bold">Past Sponsors</h2>
-      </div>
-
-      <BrowserFrame>
-        <div class="p-4 md:p-6 lg:p-10 grid grid-cols-2 grid-rows-4 md:grid-cols-3 md:grid-rows-3 place-items-center gap-10">
-          <Image src={aisg} alt="AI Singapore" class="object-contain" />
-          <Image src={grab} alt="Grab" class="object-contain" />
-          <Image src={rakuten} alt="Rakuten" class="object-contain" />
-          <Image src={paypal} alt="PayPal" class="object-contain" />
-          <Image src={spdigital} alt="SP Digital" class="object-contain" />
-          <Image src={redbull} alt="Redbull" class="object-contain" />
-          <Image src={wanted} alt="Wanted" class="object-contain" />
-          <Image src={google} alt="Google" class="object-contain col-span-1 md:col-span-2" />
-        </div>
+        <div class="p-4 md:p-6 lg:p-10 flex flex-col items-center justify-center gap-4">
+          <div class="flex items-center justify-center flex-col p-4 md:p-8 lg:p-12">
+            <h2 class="text-xl md:text-4xl lg:text-5xl font-semibold text-app-red pb-4 md:pb-12">Platinum Sponsors</h2>
+            <Image src={govtech} alt="GovTech - Stack Community" class="object-contain" />
+          </div>
+          <div class="flex items-center justify-center flex-col p-4 md:p-8 lg:p-12">
+            <h2 class="text-xl md:text-4xl lg:text-5xl font-semibold text-app-red pb-4 md:pb-12">Gold Sponsors</h2>
+            <div class="flex items-center justify-center flex-col gap-4">
+              <div class="flex-1">
+                <Image src={spdigital} alt="SPDigital" class="h-[60px] md:h-[120px] lg:h-[140px] w-auto" />
+              </div>
+              <div class="flex-1">
+                <Image src={ahrefs} alt="Ahrefs" class="h-[60px] md:h-[120px] lg:h-[140px] w-auto object-contain" />
+              </div>
+              <div class="flex-1 -mt-4">
+                <Image src={zenika} alt="Zenika" class="h-[100px] md:h-[160px] lg:h-[140px] object-contain" />
+              </div>
+            </div>
+          </div>
+          <div class="flex items-center justify-center flex-col p-4 md:p-8 lg:p-12">
+            <h2 class="text-xl md:text-4xl lg:text-5xl font-semibold text-app-red pb-4 md:pb-12 ">Venue sponsors</h2>
+            <div class="flex items-center justify-center flex-col gap-8">
+              <Image src={rakutenVenue} alt="AI Singapore" class="object-contain h-[60px] md:h-[120px] lg:h-[140px] w-auto" />
+              <Image src={googleVenue} alt="Google" class="object-contain h-[60px] md:h-[120px] lg:h-[140px] w-auto" />
+            </div>
+          </div>
+          </div>
       </BrowserFrame>
     </section>
 
