@@ -8,11 +8,10 @@ const images = await Astro.glob("../assets/album/*.{png,jpeg}");
 
 <script>
 import { Swiper } from "swiper";
-import { EffectFade, Navigation, Pagination } from "swiper/modules";
+import { Navigation, Pagination } from "swiper/modules";
 
 new Swiper(".swiper", {
-  modules: [Navigation, Pagination, EffectFade],
-  effect: "fade",
+  modules: [Navigation, Pagination],
   slidesPerView: 1,
   spaceBetween: 28,
   navigation: {
@@ -27,7 +26,7 @@ new Swiper(".swiper", {
 });
 </script>
 
-<div class="swiper relative !overflow-visible">
+<div class="swiper relative">
 	<div class="swiper-wrapper">
 		{
 			images.map((img) => {
