@@ -1,5 +1,12 @@
-<div class="rounded-[10px] overflow-hidden bg-white shadow-lg">
-  <div class="bg-gray-200 w-full h-9 px-4 py-3">
+---
+interface Props {
+	dark?: boolean
+}
+
+const { dark = false } = Astro.props;
+---
+<div class=`rounded-[10px] overflow-hidden shadow-lg ${dark? 'bg-gray-900' : 'bg-white'}`>
+  <div class=`w-full h-9 px-4 py-3 ${dark? 'bg-gray-900' : 'bg-gray-200'}`>
       <div class="flex flex-row gap-2 items-center">
           <div class="bg-[#FF5F57] w-[14px] h-[14px] rounded-full" />
           <div class="bg-[#FFBC2F] w-[14px] h-[14px] rounded-full" />
