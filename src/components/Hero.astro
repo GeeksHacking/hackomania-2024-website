@@ -1,29 +1,239 @@
 ---
-import HackOManiaLogo from '../components/HackOManiaLogo.astro'
+import HeroDesktop from './HeroDesktop.astro'
+import HeroMobile from './HeroMobile.astro'
 ---
-<div class="w-[300px] md:w-[600px]">
-	<HackOManiaLogo />
+<div class="w-full hidden md:flex justify-center">
+	<HeroDesktop />
+</div>
+<div class="w-full flex justify-center md:hidden">
+	<HeroMobile />
 </div>
 
-<!-- <div class="flex space-x-4">
-        <ClockBox>00</ClockBox>
-        <ClockBox>00</ClockBox>
-        <ClockBox>00</ClockBox>
-        <ClockBox>00</ClockBox>
-      </div> -->
 
-<div class="flex flex-col md:flex-row">
-	<button
-		type="button"
-		class="text-white uppercase font-code bg-app-red hover:rose-800 font-medium rounded-lg text-sm px-4 py-2.5 me-2 mb-2 dark:hover:bg-rose-700 focus:outline-none">
-		Registration coming soon!
-	</button>
-	<a
-		target="_blank"
-		href="//hackomania2019.geekshacking.com"
-		target="_blank"
-		type="button"
-		class="uppercase font-code text-app-red font-semibold hover:text-rose-800 rounded-lg text-sm px-4 py-2.5 me-2 mb-2 focus:outline-none">
-		Visit our 2019 website!</a
-	>
-</div>
+<script lang="js">
+	const endDate = new Date("2024-04-06T08:00:00");
+	const svgNS = "http://www.w3.org/2000/svg";
+
+	// Function to create a text element
+	function createTextElement(cls, x, y, text = "", fontSize = 30) {
+		const textElement = document.createElementNS(svgNS, "text");
+		textElement.classList.add(cls);
+		textElement.setAttribute("x", x);
+		textElement.setAttribute("y", y);
+		textElement.setAttribute("fill", "#4B0082");
+		textElement.setAttribute("font-family", "Cascadia Code");
+		textElement.setAttribute("font-weight", "600");
+		textElement.setAttribute("font-size", fontSize);
+		textElement.appendChild(document.createTextNode(text));
+		return textElement;
+	}
+
+	function createClockboxTextForDesktop() {
+		const clockboxElement = document.querySelector("#clockbox");
+		const clockboxContainer = document.querySelector("#clockbox-container");
+
+		const baseX = Number(clockboxContainer.getAttribute("x"));
+		const baseY = Number(clockboxContainer.getAttribute("y"));
+		const y = baseY + 48;
+
+		const baseMargin = 40;
+
+		// create dd:hh:mm:dd text elements
+		clockboxElement.appendChild(
+			createTextElement("days", baseX + baseMargin, y),
+		);
+		clockboxElement.appendChild(
+			createTextElement(
+				"days-hours-sepearator",
+				baseX + baseMargin + 48,
+				y,
+				":",
+			),
+		);
+		clockboxElement.appendChild(
+			createTextElement("hours", baseX + baseMargin * 3, y),
+		);
+		clockboxElement.appendChild(
+			createTextElement(
+				"hours-mins-sepearator",
+				baseX + baseMargin * 3 + 48,
+				y,
+				":",
+			),
+		);
+		clockboxElement.appendChild(
+			createTextElement("minutes", baseX + baseMargin * 5, y),
+		);
+		clockboxElement.appendChild(
+			createTextElement(
+				"mins-seconds-sepearator",
+				baseX + baseMargin * 5 + 48,
+				y,
+				":",
+			),
+		);
+		clockboxElement.appendChild(
+			createTextElement("seconds", baseX + baseMargin * 7, y),
+		);
+
+		// create time unit text elements
+		const timeUnitBaseX = baseX + 8;
+		const timeUnitY = y + 16;
+		clockboxElement.appendChild(
+			createTextElement("days-unit", timeUnitBaseX + baseMargin, timeUnitY, "days", 10),
+		);
+		clockboxElement.appendChild(
+			createTextElement(
+				"hours-unit",
+				timeUnitBaseX + baseMargin * 3,
+				timeUnitY,
+				"hours",
+				10,
+			),
+		);
+		clockboxElement.appendChild(
+			createTextElement(
+				"minutes-unit",
+				timeUnitBaseX + baseMargin * 5,
+				timeUnitY,
+				"mins",
+				10,
+			),
+		);
+		clockboxElement.appendChild(
+			createTextElement(
+				"seconds-unit",
+				timeUnitBaseX + baseMargin * 7,
+				timeUnitY,
+				"secs",
+				10,
+			),
+		);
+	}
+
+	function createClockboxTextForMobile() {
+		const clockboxElement = document.querySelector("#mobile-clockbox");
+		const clockboxContainer = document.querySelector("#mobile-clockbox-container");
+
+		const baseX = Number(clockboxContainer.getAttribute("x"));
+		const baseY = Number(clockboxContainer.getAttribute("y"));
+		const y = baseY + 22;
+
+		const baseMargin = 18;
+
+		// create dd:hh:mm:dd text elements
+		clockboxElement.appendChild(
+			createTextElement("days", baseX + baseMargin, y, "", 16),
+		);
+		clockboxElement.appendChild(
+			createTextElement(
+				"days-hours-sepearator",
+				baseX + baseMargin + 24,
+				y,
+				":",
+				16
+			),
+		);
+		clockboxElement.appendChild(
+			createTextElement("hours", baseX + baseMargin * 3, y, "", 16),
+		);
+		clockboxElement.appendChild(
+			createTextElement(
+				"hours-mins-sepearator",
+				baseX + baseMargin * 3 + 24,
+				y,
+				":",
+				16
+			),
+		);
+		clockboxElement.appendChild(
+			createTextElement("minutes", baseX + baseMargin * 5, y, "", 16),
+		);
+		clockboxElement.appendChild(
+			createTextElement(
+				"mins-seconds-sepearator",
+				baseX + baseMargin * 5 + 24,
+				y,
+				":",
+				16
+			),
+		);
+		clockboxElement.appendChild(
+			createTextElement("seconds", baseX + baseMargin * 7, y, "", 16),
+		);
+
+		// create time unit text elements
+		const timeUnitBaseX = baseX;
+		const timeUnitY = y + 8;
+		clockboxElement.appendChild(
+			createTextElement("days-unit", timeUnitBaseX + baseMargin, timeUnitY, "days", 8),
+		);
+		clockboxElement.appendChild(
+			createTextElement(
+				"hours-unit",
+				timeUnitBaseX + baseMargin * 3,
+				timeUnitY,
+				"hours",
+				8,
+			),
+		);
+		clockboxElement.appendChild(
+			createTextElement(
+				"minutes-unit",
+				timeUnitBaseX + baseMargin * 5,
+				timeUnitY,
+				"mins",
+				8,
+			),
+		);
+		clockboxElement.appendChild(
+			createTextElement(
+				"seconds-unit",
+				timeUnitBaseX + baseMargin * 7,
+				timeUnitY,
+				"secs",
+				8,
+			),
+		);
+	}
+
+	function updateCountdown() {
+		const now = new Date();
+		const timeDifference = endDate.getTime() - now.getTime();
+
+		let days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+		let hours = Math.floor(
+			(timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
+		);
+		let minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+		let seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
+
+		const timeUnits =  {
+			"days": days,
+			"hours": hours,
+			"minutes": minutes,
+			"seconds": seconds,
+		}
+
+		for (timeUnit of Object.keys(timeUnits)) {
+			// if we left with a time unit of single digit, we still want to display the '0' in front of it so that it display better.
+			if (`${timeUnits[timeUnit]}`.length == 1) {
+				timeUnits[timeUnit] = `0${timeUnits[timeUnit]}`;
+			}
+			document.querySelectorAll(`.${timeUnit}`).forEach(element => {
+				element.textContent = `${timeUnits[timeUnit]}`;
+			})
+		}
+
+	}
+
+	createClockboxTextForDesktop();
+	createClockboxTextForMobile();
+	// set initial countdown text
+	updateCountdown();
+
+	// set countdown text every second
+	setInterval(updateCountdown, 1000);
+</script>
+
+
