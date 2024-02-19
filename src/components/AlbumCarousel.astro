@@ -8,16 +8,12 @@ const images = await Astro.glob("../assets/album/*.{png,jpeg,JPG}");
 
 <script>
 import { Swiper } from "swiper";
-import { Navigation, Pagination } from "swiper/modules";
+import { Pagination } from "swiper/modules";
 
 new Swiper(".swiper", {
-  modules: [Navigation, Pagination],
+  modules: [Pagination],
   slidesPerView: 1,
   spaceBetween: 28,
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
   pagination: {
     el: ".swiper-pagination",
     type: "bullets",
@@ -42,10 +38,7 @@ new Swiper(".swiper", {
 			})
 		}
 	</div>
-	<div class="hidden md:block">
-    <button class="swiper-button-next"></button>
-		<button class="swiper-button-prev"></button>
-	</div>
+	<div class="swiper-pagination" />
 </div>
 
 <style lang="postcss">

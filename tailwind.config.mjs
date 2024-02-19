@@ -12,6 +12,7 @@ export default {
 					purple: '#4B0082',
 					blue: '#45AACB',
 					red: '#AD2F55',
+					yellow: '#FCBC08'
 				}
 			},
 			borderRadius: {
