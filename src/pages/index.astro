@@ -46,11 +46,19 @@ const teamMembers = team.map(item => ({
     </section>
 
     <section id="about" class="scroll-m-16 space-y-6">
-      <div class="grid grid-cols-2 items-center">
-        <div class="col-span-1 w-full p-4">
+      <div class="flex flex-col-reverse md:grid md:grid-cols-2 items-center">
+        <div class="flex flex-row gap-5 font-code font-bold justify-center md:hidden">
+          <a href="https://hackomania2019.geekshacking.com/" target="_blank">
+            <div class="shadow-md hover:shadow-lg rounded-[10px] p-5 bg-app-yellow text-black">2019</div>
+          </a>
+          <a href="https://hackomania2018.geekshacking.com/" target="_blank">
+            <div class="shadow-md hover:shadow-lg rounded-[10px] p-5 bg-app-blue text-white">2018</div>
+          </a>
+        </div>
+        <div class="md:col-span-1 w-full p-4">
           <AlbumCarousel />
         </div>
-        <div class="col-span-1 p-4 flex flex-col gap-8">
+        <div class="md:col-span-1 p-4 flex flex-col gap-8">
           <div class="text-balance">
             <h2 class="border-l-8 border-solid border-l-app-red pl-6 text-4xl md:text-6xl text-app-purple font-code font-bold">HackOMania 2024</h2>
             <p class="pt-8 font-code">
@@ -58,9 +66,7 @@ const teamMembers = team.map(item => ({
               unexplored realms to uncover boundless possibilities. For HackOMania 2024, we seek to Innovate for Tomorrow: Building a Resilient Future.
             </p>
           </div>
-    
-
-          <div class="flex flex-row gap-5 font-code font-bold">
+          <div class="hidden md:flex md:flex-row gap-5 font-code font-bold justify-center md:justify-start">
             <a href="https://hackomania2019.geekshacking.com/" target="_blank">
               <div class="shadow-md hover:shadow-lg rounded-[10px] p-5 bg-app-yellow text-black">2019</div>
             </a>
