@@ -46,14 +46,30 @@ const teamMembers = team.map(item => ({
     </section>
 
     <section id="about" class="scroll-m-16 space-y-6">
-      <div class="border-l-8 border-solid border-l-app-red pl-6">
-        <h2 class="text-4xl md:text-6xl text-app-purple font-code font-bold">HackOMania 2024</h2>
-      </div>
+      <div class="grid grid-cols-2 items-center">
+        <div class="col-span-1 w-full p-4">
+          <AlbumCarousel />
+        </div>
+        <div class="col-span-1 p-4 flex flex-col gap-8">
+          <div class="text-balance">
+            <h2 class="border-l-8 border-solid border-l-app-red pl-6 text-4xl md:text-6xl text-app-purple font-code font-bold">HackOMania 2024</h2>
+            <p class="pt-8 font-code">
+              HackOMania is an annual hackathon bringing students and tech professionals together over 24 hours to tackle real world challenges. Each year, the GeeksHacking community ventures into
+              unexplored realms to uncover boundless possibilities. For HackOMania 2024, we seek to Innovate for Tomorrow: Building a Resilient Future.
+            </p>
+          </div>
+    
 
-      <p class="font-code">
-        HackOMania is an annual hackathon bringing students and tech professionals together over 24 hours to tackle real world challenges. Each year, the GeeksHacking community ventures into
-        unexplored realms to uncover boundless possibilities. For HackOMania 2024, we seek to Innovate for Tomorrow: Building a Resilient Future.
-      </p>
+          <div class="flex flex-row gap-5 font-code font-bold">
+            <a href="https://hackomania2019.geekshacking.com/" target="_blank">
+              <div class="shadow-md hover:shadow-lg rounded-[10px] p-5 bg-app-yellow text-black">2019</div>
+            </a>
+            <a href="https://hackomania2018.geekshacking.com/" target="_blank">
+              <div class="shadow-md hover:shadow-lg rounded-[10px] p-5 bg-app-blue text-white">2018</div>
+            </a>
+          </div>
+        </div>
+      </div>
     </section>
 
     <section id="sponsors" class="scroll-m-16 space-y-6">
@@ -145,14 +161,6 @@ const teamMembers = team.map(item => ({
             </div>
           </div>
         </div>
-    </section>
-
-    <section id="album" class="scroll-m-16 space-y-6">
-      <div class="border-l-8 border-solid border-l-app-red pl-6">
-        <h2 class="text-4xl md:text-6xl text-app-purple font-code font-bold">Album</h2>
-      </div>
-
-      <AlbumCarousel />
     </section>
 
     <section id="venue" class="scroll-m-16 space-y-6">
@@ -269,13 +277,6 @@ const teamMembers = team.map(item => ({
         <br />
         <br />
         Please contact <a target="_blank" class="text-app-red" href="mailto:sponsor@geekshacking.com">sponsor@geekshacking.com</a> for sponsorship enquiries.
-        <br />
-        <br />
-        <br />
-        <br />
-        View HackOMania 2019 <a target="_blank" class="text-app-purple" href="https://hackomania2019.geekshacking.com/"> here</a>.
-        <br />
-        View HackOMania 2018 <a target="_blank" class="text-app-purple" href="https://hackomania2018.geekshacking.com/"> here</a>.
       </p>
     </section>
   </main>
