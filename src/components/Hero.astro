@@ -1,8 +1,10 @@
 ---
 import { Image } from 'astro:assets'
+
 import Countdown from './Countdown.astro'
 import BrowserFrame from './BrowserFrame.astro'
 import HackOManiaLogo from './HackOManiaLogo.astro'
+
 import HeartSprite from '../assets/sprites/heart.png'
 import ConsoleSprite from '../assets/sprites/console.png'
 import MouseSprite from '../assets/sprites/mouse.png'
@@ -14,12 +16,12 @@ import LightbulbSprite from '../assets/sprites/light-bulb.png'
 <!-- Desktop View -->
 <div id="hero-container" class="hidden md:block">
   <div class="flex justify-center items-center relative" style="width:1226px; height: 553px;">
-    <Image class="absolute z-30 bottom-12 right-24" src={HeartSprite} alt="" quality="max" />
-    <Image class="absolute z-30 bottom-12 left-16" src={ConsoleSprite} alt="" quality="max" />
-    <Image class="absolute z-30 top-7 left-[337px]" src={SpectaclesSprite} alt="" quality="max" />
-    <Image class="absolute z-30 top-0 left-12" src={LightbulbSprite} alt="" quality="max" />
-    <Image class="absolute z-30 top-50 right-4" src={BatterySprite} alt="" quality="max" />
-    <Image class="absolute z-10 top-50 left-0" src={MouseSprite} alt="" quality="max" />
+    <Image class="absolute z-30 bottom-12 right-24" src={HeartSprite} width={151} densities={[1.5, 2, 3]} quality="max" alt="" />
+    <Image class="absolute z-30 bottom-12 left-16" src={ConsoleSprite} width={247} densities={[1.5, 2, 3]} quality="max" alt="" />
+    <Image class="absolute z-30 top-7 left-[337px]" src={SpectaclesSprite} width={308} densities={[1.5, 2, 3]} quality="max" alt="" />
+    <Image class="absolute z-30 top-0 left-12" src={LightbulbSprite} width={220} densities={[1.5, 2, 3]} quality="max" alt="" />
+    <Image class="absolute z-30 top-50 right-4" src={BatterySprite} width={203} densities={[1.5, 2, 3]} quality="max" alt="" />
+    <Image class="absolute z-10 top-50 left-0" src={MouseSprite} width={375} densities={[1.5, 2, 3]} quality="max" alt="" />
     <div class="z-20 w-[775px] relative">
       <div class="absolute z-30 -top-8 right-6">
         <Countdown />
@@ -32,15 +34,18 @@ import LightbulbSprite from '../assets/sprites/light-bulb.png'
     </div>
   </div>
 </div>
+
 <!-- Mobile view -->
 <div class="flex md:hidden justify-center items-center w-full relative px-4">
-  <Image class="absolute z-30 -bottom-8 right-0" width={66} src={BatterySprite} alt="" quality="max" />
-  <Image class="absolute z-30 -bottom-8 left-0" width={102} src={ConsoleSprite} alt="" quality="max" />
-  <Image class="absolute z-30 -top-4 left-20" width={80} src={SpectaclesSprite} alt="" quality="max" />
+  <Image class="absolute z-30 -bottom-8 right-0" width={66} densities={[1.5, 2, 3]} quality="max" src={BatterySprite}  alt="" />
+  <Image class="absolute z-30 -bottom-8 left-0" width={102} densities={[1.5, 2, 3]} quality="max" src={ConsoleSprite} alt="" />
+  <Image class="absolute z-30 -top-4 left-20" width={80} densities={[1.5, 2, 3]} quality="max" src={SpectaclesSprite}  alt="" />
+
   <div class="z-20 w-full relative">
     <div class="absolute z-30 -top-4 right-6">
       <Countdown />
     </div>
+
     <BrowserFrame size="small" dark>
       <div class="flex justify-center items-center pt-4 pb-10">
         <HackOManiaLogo />
