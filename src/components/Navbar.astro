@@ -15,8 +15,7 @@ const { navItems } = Astro.props;
 		>
 	</header>
 
-	<button
-		class="nav-hamburger-menu-button block lg:hidden">
+	<button class="nav-hamburger-menu-button block lg:hidden">
 		<svg
 			width="30"
 			height="30"
@@ -30,8 +29,7 @@ const { navItems } = Astro.props;
 		</svg>
 	</button>
 
-
-  <!-- Nav bar shown on mobile/tablet viewport -->
+	<!-- Nav bar shown on mobile/tablet viewport -->
 	<nav
 		class="lg:hidden absolute top-10 right-4 p-4 items-start justify-center flex flex-col gap-4 opacity-0 hidden bg-white rounded shadow transition-all">
 		{
@@ -45,7 +43,7 @@ const { navItems } = Astro.props;
 		}
 	</nav>
 
-  <!-- Nav bar shown on desktop viewport -->
+	<!-- Nav bar shown on desktop viewport -->
 	<nav
 		class="hidden lg:flex flex-row items-center justify-end gap-7 flex-grow text-sm">
 		{
@@ -73,22 +71,44 @@ const { navItems } = Astro.props;
 </div>
 <script>
 	const onNavItemClick = () => {
-	const navbarEl = document.querySelector('nav')
-	if (navbarEl) {
-		if (navbarEl.classList.contains('hidden')) {
-			navbarEl.classList.remove('hidden')
-			navbarEl.classList.remove('opacity-0')
+		const navbarEl = document.querySelector("nav");
+		if (navbarEl) {
+			if (navbarEl.classList.contains("hidden")) {
+				navbarEl.classList.remove("hidden");
+				navbarEl.classList.remove("opacity-0");
+			} else {
+				navbarEl.classList.add("opacity-0");
+				setTimeout(() => {
+					navbarEl.classList.add("hidden");
+				}, 300);
+			}
 		}
-		else {
-			navbarEl.classList.add('opacity-0')
+	};
+
+	document.querySelectorAll(".nav-item").forEach((el) => {
+		el.addEventListener("click", onNavItemClick);
+	});
+	document
+		.querySelector(".nav-hamburger-menu-button")
+		?.addEventListener("click", onNavItemClick);
+
+	// Hide nav menu on mobile when clicking outside of nav menu
+	document.addEventListener("click", function (event) {
+		const navbarEl = document.querySelector("nav");
+		const toggleButton = document.querySelector(".nav-hamburger-menu-button");
+		if (!navbarEl || !toggleButton) return;
+		const clickInsideNav = navbarEl.contains(event.target);
+		const clickOnToggleButton = toggleButton.contains(event.target);
+
+		if (
+			!clickInsideNav &&
+			!clickOnToggleButton &&
+			!navbarEl.classList.contains("hidden")
+		) {
+			navbarEl.classList.add("opacity-0");
 			setTimeout(() => {
-				navbarEl.classList.add('hidden')
+				navbarEl.classList.add("hidden");
 			}, 300);
 		}
-	}
-}
-	document.querySelectorAll('.nav-item').forEach((el) => {
-		el.addEventListener('click', onNavItemClick)
-	})
-	document.querySelector('.nav-hamburger-menu-button')?.addEventListener('click', onNavItemClick)
+	});
 </script>
