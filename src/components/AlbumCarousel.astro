@@ -8,12 +8,17 @@ const images = await Astro.glob("../assets/album/*.{png,jpeg,JPG}");
 
 <script>
 import { Swiper } from "swiper";
-import { Pagination } from "swiper/modules";
+import { Pagination, Autoplay } from "swiper/modules";
 
 new Swiper(".swiper", {
-  modules: [Pagination],
+  modules: [Pagination, Autoplay],
   slidesPerView: 1,
   spaceBetween: 28,
+  centeredSlides: true,
+  autoplay: {
+    pauseOnMouseEnter: true,
+    delay: 2500,
+  },
   pagination: {
     el: ".swiper-pagination",
     type: "bullets",
