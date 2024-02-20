@@ -1,16 +1,17 @@
 ---
 interface Props {
 	dark?: boolean
+  size?: 'small' | 'medium'
 }
 
-const { dark = false } = Astro.props;
+const { dark = false, size = 'medium' } = Astro.props;
 ---
 <div class=`rounded-[10px] overflow-hidden shadow-lg ${dark? 'bg-gray-900' : 'bg-white'}`>
   <div class=`w-full h-9 px-4 py-3 ${dark? 'bg-gray-900' : 'bg-gray-200'}`>
       <div class="flex flex-row gap-2 items-center">
-          <div class="bg-[#FF5F57] w-[14px] h-[14px] rounded-full" />
-          <div class="bg-[#FFBC2F] w-[14px] h-[14px] rounded-full" />
-          <div class="bg-[#2BC840] w-[14px] h-[14px] rounded-full" />
+          <div class=`bg-[#FF5F57] ${size === 'medium' ? 'w-[14px] h-[14px]' : 'w-[8px] h-[8px]'} rounded-full` />
+          <div class=`bg-[#FFBC2F] ${size === 'medium' ? 'w-[14px] h-[14px]' : 'w-[8px] h-[8px]'} rounded-full` />
+          <div class=`bg-[#2BC840] ${size === 'medium' ? 'w-[14px] h-[14px]' : 'w-[8px] h-[8px]'} rounded-full` />
       </div>
   </div>
   <slot />
