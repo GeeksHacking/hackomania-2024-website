@@ -238,10 +238,10 @@ const teamMembers = team.map(item => ({
           <div class="flex items-center justify-center flex-col p-4 md:p-8 lg:p-12">
             <h2 class="text-xl md:text-4xl lg:text-5xl font-semibold text-app-red pb-4 md:pb-12 font-code">Venue sponsors</h2>
             <div class="flex items-center justify-center flex-col gap-8">
-              <a target="_blank" class="hover:drop-shadow-xl focus:drop-shadow-2xl rounded" href="https://global.rakuten.com/corp/careers" target="_blank" rel="noreferrer">
+              <a class="hover:drop-shadow-xl focus:drop-shadow-2xl rounded" href="https://global.rakuten.com/corp/careers" target="_blank" rel="noreferrer">
                 <Image src={rakutenVenue} alt="AI Singapore" class="object-contain h-[60px] md:h-[120px] lg:h-[140px] w-auto" />
               </a>
-              <a target="_blank" class="hover:drop-shadow-xl focus:drop-shadow-2xl rounded" href="https://www.google.com/about/careers/applications/locations/sing" target="_blank" rel="noreferrer">
+              <a class="hover:drop-shadow-xl focus:drop-shadow-2xl rounded" href="https://www.google.com/about/careers/applications/locations/sing" target="_blank" rel="noreferrer">
               <Image src={googleVenue} alt="Google" class="object-contain h-[60px] md:h-[120px] lg:h-[140px] w-auto" />
               </a>
             </div>
@@ -262,7 +262,9 @@ const teamMembers = team.map(item => ({
     </section>
 
     <section id="geekshacking" class="space-y-6 flex flex-col md:flex-row gap-10">
-      <Image src={geekshacking} alt="GeeksHacking" class="min-w-[300px] w-[400px] mx-auto object-contain" />
+      <a href="https://geekshacking.com/" target="_blank">
+        <Image src={geekshacking} alt="GeeksHacking" class="min-w-[300px] w-[400px] mx-auto object-contain" />
+      </a>
 
       <div class="space-y-6">
         <div class="border-l-8 border-solid border-l-app-red pl-6">
@@ -270,7 +272,7 @@ const teamMembers = team.map(item => ({
         </div>
 
         <p class="font-code">
-          GeeksHacking is a geeky community that seeks to Give back and Grow together. We organize events and workshops to help students and professionals alike to learn and grow together. HackOMania
+          <a href="https://geekshacking.com/" target="_blank" class="font-semibold underline text-app-red hover:text-white hover:bg-app-red">GeeksHacking</a> is a geeky community that seeks to Give back and Grow together. We organize events and workshops to help students and professionals alike to learn and grow together. HackOMania
           is one of our flagship events that we organize annually.
         </p>
       </div>
@@ -291,13 +293,13 @@ const teamMembers = team.map(item => ({
         For general enquiries
         <br />
         <br />
-        Drop us and email at <a target="_blank" class="text-app-red" href="mailto:contact@geekshacking.com">contact@geekshacking.com</a> or contact us through our <a target="_blank" class="text-app-red" href="https://www.facebook.com/groups/geekshacking/">Facebook page</a>.
+        Drop us and email at <a target="_blank" class="text-app-red font-semibold underline hover:text-white hover:bg-app-red" href="mailto:contact@geekshacking.com">contact@geekshacking.com</a> or contact us through our <a target="_blank" class="text-app-red font-semibold underline hover:text-white hover:bg-app-red" href="https://www.facebook.com/groups/geekshacking/">Facebook page</a>.
         <br />
         <br />
         For Sponsorship
         <br />
         <br />
-        Please contact <a target="_blank" class="text-app-red" href="mailto:sponsor@geekshacking.com">sponsor@geekshacking.com</a> for sponsorship enquiries.
+        Please contact <a target="_blank" class="text-app-red font-semibold underline hover:text-white hover:bg-app-red" href="mailto:sponsor@geekshacking.com">sponsor@geekshacking.com</a> for sponsorship enquiries.
       </p>
     </section>
   </main>
