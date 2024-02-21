@@ -47,7 +47,7 @@ const teamMembers = team.map(item => ({
 
     <section id="about" class="scroll-m-16 space-y-6">
       <div class="flex flex-col-reverse md:grid md:grid-cols-2 items-center">
-        <div class="flex flex-row gap-5 font-code font-bold justify-center md:hidden">
+        <div class="flex flex-row gap-5 font-serif font-bold justify-center md:hidden">
           <a href="https://hackomania2019.geekshacking.com/" target="_blank">
             <div class="shadow-md hover:shadow-lg rounded-[10px] p-5 bg-app-yellow text-black">2019</div>
           </a>
@@ -60,13 +60,13 @@ const teamMembers = team.map(item => ({
         </div>
         <div class="md:col-span-1 p-4 flex flex-col gap-8">
           <div class="text-balance">
-            <h2 class="border-l-8 border-solid border-l-app-red pl-6 text-4xl md:text-6xl text-app-purple font-code font-bold">HackOMania 2024</h2>
-            <p class="pt-8 font-code">
+            <h2 class="border-l-8 border-solid border-l-app-red pl-6 text-4xl md:text-6xl text-app-purple font-serif font-bold">HackOMania 2024</h2>
+            <p class="pt-8 font-sans">
               HackOMania is an annual hackathon bringing students and tech professionals together over 24 hours to tackle real world challenges. Each year, the GeeksHacking community ventures into
               unexplored realms to uncover boundless possibilities. For HackOMania 2024, we seek to Innovate for Tomorrow: Building a Resilient Future.
             </p>
           </div>
-          <div class="hidden md:flex md:flex-row gap-5 font-code font-bold justify-center md:justify-start">
+          <div class="hidden md:flex md:flex-row gap-5 font-serif font-bold justify-center md:justify-start">
             <a href="https://hackomania2019.geekshacking.com/" target="_blank">
               <div class="shadow-md hover:shadow-lg rounded-[10px] p-5 bg-app-yellow text-black">2019</div>
             </a>
@@ -79,13 +79,13 @@ const teamMembers = team.map(item => ({
     </section>
     <section id="prizes" class="scroll-m-16 space-y-6 bg-no-repeat bg-cover bg-bottom" style={`background-image: url('${background.src}')`}>
       <div class="border-l-8 border-solid border-l-app-red pl-6">
-        <h2 class="text-4xl md:text-6xl text-app-purple font-code font-bold">Prizes</h2>
+        <h2 class="text-4xl md:text-6xl text-app-purple font-serif font-bold">Prizes</h2>
       </div>
         <div class="flex flex-col md:flex-row">
           <div class="flex-1"></div>
           <div class="flex flex-1 flex-col items-center justify-center">
             <Image src={firstPrize} width={150} alt="" />
-            <div class="bg-[#F9F9F3] text-app-red text-bold py-4 w-full text-3xl rounded-2xl font-code flex flex-col items-center justify-center drop-shadow-lg">
+            <div class="bg-[#F9F9F3] text-app-red text-bold py-4 w-full text-3xl rounded-2xl font-serif flex flex-col items-center justify-center drop-shadow-lg">
               <p>Champion</p>  
               <p>$1500</p>
             </div>
@@ -95,7 +95,7 @@ const teamMembers = team.map(item => ({
         <div class="flex flex-col md:flex-row gap-5">
           <div class="flex flex-col items-center justify-center flex-1">
             <Image src={secondPrize} width={150} alt="" />
-            <div class="bg-[#F9F9F3] text-app-red text-bold py-4 px-4 w-full text-3xl rounded-2xl font-code flex flex-col items-center justify-center text-balance text-center drop-shadow-lg">
+            <div class="bg-[#F9F9F3] text-app-red text-bold py-4 px-4 w-full text-3xl rounded-2xl font-serif flex flex-col items-center justify-center text-balance text-center drop-shadow-lg">
               <p>1st</p>  
               <p>Runner Up</p>  
               <p>$1000</p>
@@ -103,7 +103,7 @@ const teamMembers = team.map(item => ({
           </div>
           <div class="flex flex-col items-center justify-center flex-1">
             <Image src={thirdPrize} width={150} alt="" />
-            <div class="bg-[#F9F9F3] text-app-red text-bold py-4 px-4 w-full text-3xl rounded-2xl font-code flex flex-col items-center justify-center text-balance text-center drop-shadow-lg">
+            <div class="bg-[#F9F9F3] text-app-red text-bold py-4 px-4 w-full text-3xl rounded-2xl font-serif flex flex-col items-center justify-center text-balance text-center drop-shadow-lg">
               <p>2nd</p>
               <p>Runner Up</p>  
               <p>$500</p>
@@ -111,7 +111,7 @@ const teamMembers = team.map(item => ({
           </div>
           <div class="flex flex-col items-center justify-center flex-1">
             <Image src={mostLikedPrize} width={150} alt="" />
-            <div class="bg-[#F9F9F3] text-app-red text-bold py-4 px-4 w-full text-3xl rounded-2xl font-code flex flex-col items-center justify-center text-balance text-center drop-shadow-lg">
+            <div class="bg-[#F9F9F3] text-app-red text-bold py-4 px-4 w-full text-3xl rounded-2xl font-serif flex flex-col items-center justify-center text-balance text-center drop-shadow-lg">
               <p>Zenika</p>  
               <p>People's Choice</p>  
               <p>$500</p>
@@ -121,43 +121,43 @@ const teamMembers = team.map(item => ({
     </section>
     <section id="rules" class="scroll-m-16 space-y-6">
       <div class="border-l-8 border-solid border-l-app-red pl-6">
-        <h2 class="text-4xl md:text-6xl text-app-purple font-code font-bold">9 Golden Rules</h2>
+        <h2 class="text-4xl md:text-6xl text-app-purple font-serif font-bold">9 Golden Rules</h2>
       </div>
       <div class="w-full text-wrap px-8">
-        <ol class="list-outside list-decimal font-code text-base flex flex-col gap-4 ">
-          <li>Team up with 3 to 5 fellow innovators to embark on this exciting journey together.</li>
+        <ol class="list-outside list-decimal font-sans text-base flex flex-col gap-4 ">
+          <li>Team up with <b>3 to 5</b> fellow innovators to embark on this exciting journey together.</li>
           <li>Keep the hackathon spirit alive with at least one team member present at the event venue throughout the event.</li>
-          <li>Dive into the heart of the theme by addressing at least one of the provided challenges head-on. </li>
+          <li>Dive into the heart of the theme by addressing <b>at least one of the provided challenges</b> head-on. </li>
           <li>Each team is the master of their own destiny! Take charge of your data and systems, and own the intellectual property you create during the hackathon.</li>
-          <li>All teams are required to use a GitHub repository and set as a public repository upon submission.</li>
+          <li>All teams are required to use a GitHub repository which is <b>set to public upon submission</b>.</li>
           <li>It's a race against the clock! Ensure all work is finalized within the hackathon duration.</li>
-          <li>Step into the spotlight with a 5-minute pitch of your project—your chance to dazzle the judges!</li>
+          <li>Step into the spotlight with a <b>5-minute pitch</b> of your project—your chance to dazzle the judges!</li>
           <li>Play nice, play fair! Teams may face disqualification at the discretion of the organizers for breaking the rules or unsporting behavior.</li>
           <li>Keep it clean, folks! Pre-coded work is strictly off-limits—let's see what you can create from scratch!</li></ol>
       </div>
     </section>
     <section id="venue" class="scroll-m-16 space-y-6">
       <div class="border-l-8 border-solid border-l-app-red pl-6">
-        <h2 class="text-4xl md:text-6xl text-app-purple font-code font-bold">Venue</h2>
+        <h2 class="text-4xl md:text-6xl text-app-purple font-serif font-bold">Venue</h2>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div class="space-y-10">
-          <h3 class="uppercase font-code font-semibold text-xl">Pre-event</h3>
+          <h3 class="uppercase font-serif font-semibold text-xl">Pre-event</h3>
 
-          <div class="font-code text-lg space-y-2">
+          <div class="font-sans text-lg space-y-2">
             <div class="flex justify-between">
-              <span class="text-app-blue">Date:</span>
+              <span class="text-app-purple">Date:</span>
               <span class="text-right">23 March 2024</span>
             </div>
 
             <div class="flex justify-between">
-              <span class="text-app-blue">Time:</span>
+              <span class="text-app-purple">Time:</span>
               <span class="text-right">1:00PM - 4:30PM</span>
             </div>
 
             <div class="flex justify-between">
-              <span class="text-app-blue">Venue:</span>
+              <span class="text-app-purple">Venue:</span>
               <span class="text-right">Google Developer Space</span>
             </div>
           </div>
@@ -172,21 +172,21 @@ const teamMembers = team.map(item => ({
         </div>
 
         <div class="space-y-10">
-          <h3 class="uppercase font-code font-semibold text-xl">Main event</h3>
+          <h3 class="uppercase font-serif font-semibold text-xl">Main event</h3>
 
-          <div class="font-code text-lg space-y-2">
+          <div class="font-sans text-lg space-y-2">
             <div class="flex justify-between">
-              <span class="text-app-blue">Date:</span>
+              <span class="text-app-purple">Date:</span>
               <span class="text-right">6 - 7 April 2024</span>
             </div>
 
             <div class="flex justify-between">
-              <span class="text-app-blue">Time:</span>
+              <span class="text-app-purple">Time:</span>
               <span class="text-right">11:30AM - 6:00PM</span>
             </div>
 
             <div class="flex justify-between">
-              <span class="text-app-blue">Venue:</span>
+              <span class="text-app-purple">Venue:</span>
               <span class="text-right">Rakuten Asia, CapitaGreen</span>
             </div>
           </div>
@@ -204,19 +204,19 @@ const teamMembers = team.map(item => ({
 
     <section id="sponsors" class="scroll-m-16 space-y-6">
       <div class="border-l-8 border-solid border-l-app-red pl-6">
-        <h2 class="text-4xl md:text-6xl text-app-purple font-code font-bold">Sponsors</h2>
+        <h2 class="text-4xl md:text-6xl text-app-purple font-serif font-bold">Sponsors</h2>
       </div>
 
       <BrowserFrame>
         <div class="p-4 md:p-6 lg:p-10 flex flex-col items-center justify-center gap-4">
           <div class="flex items-center justify-center flex-col p-4 md:p-8 lg:p-12">
-            <h2 class="text-xl md:text-4xl lg:text-5xl font-semibold text-app-red pb-4 md:pb-12 font-code">Platinum Sponsor</h2>
+            <h2 class="text-xl md:text-4xl lg:text-5xl font-semibold text-app-red pb-4 md:pb-12 font-serif">Platinum Sponsor</h2>
             <a target="_blank" class="hover:drop-shadow-xl focus:drop-shadow-2xl rounded" href="https://www.meetup.com/stack-by-govtech-singapore/">
               <Image src={govtech} alt="GovTech - Stack Community" />
             </a>
           </div>
           <div class="flex items-center justify-center flex-col p-4 md:p-8 lg:p-12">
-            <h2 class="text-xl md:text-4xl lg:text-5xl font-semibold text-app-red pb-4 md:pb-12 font-code">Gold Sponsors</h2>
+            <h2 class="text-xl md:text-4xl lg:text-5xl font-semibold text-app-red pb-4 md:pb-12 font-serif">Gold Sponsors</h2>
             <div class="flex items-center justify-center flex-col gap-4">
               <div class="flex-1">
                 <a target="_blank" class="hover:drop-shadow-xl focus:drop-shadow-2xl rounded" href="https://www.spgroup.com.sg/about-us/careers">
@@ -236,7 +236,7 @@ const teamMembers = team.map(item => ({
             </div>
           </div>
           <div class="flex items-center justify-center flex-col p-4 md:p-8 lg:p-12">
-            <h2 class="text-xl md:text-4xl lg:text-5xl font-semibold text-app-red pb-4 md:pb-12 font-code">Venue sponsors</h2>
+            <h2 class="text-xl md:text-4xl lg:text-5xl font-semibold text-app-red pb-4 md:pb-12 font-serif">Venue sponsors</h2>
             <div class="flex items-center justify-center flex-col gap-8">
               <a class="hover:drop-shadow-xl focus:drop-shadow-2xl rounded" href="https://global.rakuten.com/corp/careers" target="_blank" rel="noreferrer">
                 <Image src={rakutenVenue} alt="AI Singapore" class="object-contain h-[60px] md:h-[120px] lg:h-[140px] w-auto" />
@@ -252,7 +252,7 @@ const teamMembers = team.map(item => ({
 
     <section id="team" class="scroll-m-16 space-y-6">
       <div class="border-l-8 border-solid border-l-app-red pl-6">
-        <h2 class="text-4xl md:text-6xl text-app-purple font-code font-bold">Our team</h2>
+        <h2 class="text-4xl md:text-6xl text-app-purple font-serif font-bold">Our team</h2>
       </div>
       <div class="grid grid-cols-2 md:grid-cols-4 gap-5">
         {teamMembers.map(member => (
@@ -268,10 +268,10 @@ const teamMembers = team.map(item => ({
 
       <div class="space-y-6">
         <div class="border-l-8 border-solid border-l-app-red pl-6">
-          <h2 class="text-4xl md:text-4xl text-app-purple font-code font-bold">GeeksHacking</h2>
+          <h2 class="text-4xl md:text-4xl text-app-purple font-serif font-bold">GeeksHacking</h2>
         </div>
 
-        <p class="font-code">
+        <p class="font-sans">
           <a href="https://geekshacking.com/" target="_blank" class="font-semibold underline text-app-red hover:text-white hover:bg-app-red">GeeksHacking</a> is a geeky community that seeks to Give back and Grow together. We organize events and workshops to help students and professionals alike to learn and grow together. HackOMania
           is one of our flagship events that we organize annually.
         </p>
@@ -280,25 +280,20 @@ const teamMembers = team.map(item => ({
 
     <section id="contact" class="scroll-m-16 space-y-6">
       <div class="border-l-8 border-solid border-l-app-red pl-6">
-        <h2 class="text-4xl md:text-6xl text-app-purple font-code font-bold">Contact Us!</h2>
+        <h2 class="text-4xl md:text-6xl text-app-purple font-serif font-bold">Contact Us!</h2>
       </div>
 
-      <p class="font-code">
+      <p class="font-sans">
         Click
-        <a target="_blank" class="text-app-purple" href="https://t.me/+HlJIBuu9isA2ZWQ1"> here</a>
+        <a target="_blank" class="font-semibold underline text-app-red hover:text-white hover:bg-app-red" href="https://t.me/+HlJIBuu9isA2ZWQ1"> here</a>
         to join GeeksHacking's Telegram channel!
       </p>
 
-      <p class="font-code">
-        For general enquiries
-        <br />
-        <br />
+      <hr />
+      <p class="font-sans">
+        <p class="font-serif">For general enquiries</p>
         Drop us and email at <a target="_blank" class="text-app-red font-semibold underline hover:text-white hover:bg-app-red" href="mailto:contact@geekshacking.com">contact@geekshacking.com</a> or contact us through our <a target="_blank" class="text-app-red font-semibold underline hover:text-white hover:bg-app-red" href="https://www.facebook.com/groups/geekshacking/">Facebook page</a>.
-        <br />
-        <br />
-        For Sponsorship
-        <br />
-        <br />
+        <p class="font-serif">For sponsorships</p>
         Please contact <a target="_blank" class="text-app-red font-semibold underline hover:text-white hover:bg-app-red" href="mailto:sponsor@geekshacking.com">sponsor@geekshacking.com</a> for sponsorship enquiries.
       </p>
     </section>

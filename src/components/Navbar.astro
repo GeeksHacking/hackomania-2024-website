@@ -10,7 +10,7 @@ const { navItems } = Astro.props;
 	<header>
 		<a
 			href="/"
-			class="font-code font-semibold text-app-purple"
+			class="font-serif font-semibold text-app-purple"
 			>HackOMania 2024</a
 		>
 	</header>
@@ -36,7 +36,7 @@ const { navItems } = Astro.props;
 			navItems.map((item) => (
 				<a
 					href={`#${item}`}
-					class="nav-item group flex flex-row items-center gap-1 font-code font-semibold text-black w-full">
+					class="nav-item group flex flex-row items-center gap-1 font-serif font-semibold text-black w-full">
 					<span>{item.toUpperCase()}</span>
 				</a>
 			))
@@ -50,7 +50,7 @@ const { navItems } = Astro.props;
 			navItems.map((item) => (
 				<a
 					href={`#${item}`}
-					class="nav-item group flex flex-row items-center gap-1 font-code font-semibold text-black">
+					class="nav-item group flex flex-row items-center gap-1 font-serif font-semibold text-black">
 					<svg
 						class="group-hover:visible invisible"
 						width="12"
