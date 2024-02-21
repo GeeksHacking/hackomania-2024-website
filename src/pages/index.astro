@@ -212,15 +212,15 @@ const teamMembers = team.map(item => ({
           <div class="flex items-center justify-center flex-col p-4 md:p-8 lg:p-12">
             <h2 class="text-xl md:text-4xl lg:text-5xl font-semibold text-app-red pb-4 md:pb-12 font-serif">Platinum Sponsor</h2>
             <a target="_blank" class="hover:drop-shadow-xl focus:drop-shadow-2xl rounded" href="https://www.meetup.com/stack-by-govtech-singapore/">
-              <Image src={govtech} alt="GovTech - Stack Community" />
+              <Image src={govtech} alt="GovTech - Stack Community" class="h-[80px] md:h-[160px] lg:h-[200px] w-auto object-contain" />
             </a>
           </div>
           <div class="flex items-center justify-center flex-col p-4 md:p-8 lg:p-12">
             <h2 class="text-xl md:text-4xl lg:text-5xl font-semibold text-app-red pb-4 md:pb-12 font-serif">Gold Sponsors</h2>
-            <div class="flex items-center justify-center flex-col gap-4">
+            <div class="flex items-center justify-center flex-row gap-1 md:gap-4 lg:gap-8">
               <div class="flex-1">
                 <a target="_blank" class="hover:drop-shadow-xl focus:drop-shadow-2xl rounded" href="https://www.spgroup.com.sg/about-us/careers">
-                  <Image src={spdigital} alt="SPDigital" class="h-[60px] md:h-[120px] lg:h-[140px] w-auto" />
+                  <Image src={spdigital} alt="SPDigital" class="h-[60px] md:h-[120px] lg:h-[140px] w-auto object-contain" />
                 </a>
               </div>
               <div class="flex-1">
@@ -235,14 +235,14 @@ const teamMembers = team.map(item => ({
               </div>
             </div>
           </div>
-          <div class="flex items-center justify-center flex-col p-4 md:p-8 lg:p-12">
+          <div class="flex items-center justify-center flex-col p-1 pb-4 md:p-8 lg:p-12">
             <h2 class="text-xl md:text-4xl lg:text-5xl font-semibold text-app-red pb-4 md:pb-12 font-serif">Venue sponsors</h2>
-            <div class="flex items-center justify-center flex-col gap-8">
-              <a class="hover:drop-shadow-xl focus:drop-shadow-2xl rounded" href="https://global.rakuten.com/corp/careers" target="_blank" rel="noreferrer">
-                <Image src={rakutenVenue} alt="AI Singapore" class="object-contain h-[60px] md:h-[120px] lg:h-[140px] w-auto" />
+            <div class="flex items-center justify-center flex-col md:flex-row gap-4 lg:gap-8">
+              <a class="flex-1 flex justify-center items-center hover:drop-shadow-xl focus:drop-shadow-2xl rounded" href="https://global.rakuten.com/corp/careers" target="_blank" rel="noreferrer">
+                <Image src={rakutenVenue} alt="Rakuten" class="object-contain h-[40px] md:h-[60px] lg:h-[100px] w-auto" />
               </a>
-              <a class="hover:drop-shadow-xl focus:drop-shadow-2xl rounded" href="https://www.google.com/about/careers/applications/locations/sing" target="_blank" rel="noreferrer">
-              <Image src={googleVenue} alt="Google" class="object-contain h-[60px] md:h-[120px] lg:h-[140px] w-auto" />
+              <a class="flex-1 flex justify-center items-center hover:drop-shadow-xl focus:drop-shadow-2xl rounded" href="https://www.google.com/about/careers/applications/locations/sing" target="_blank" rel="noreferrer">
+              <Image src={googleVenue} alt="Google" class="object-contain h-[20px] md:h-[120px] lg:h-[140px] w-auto" />
               </a>
             </div>
           </div>
