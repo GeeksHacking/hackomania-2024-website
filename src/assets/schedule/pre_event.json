@@ -1,0 +1,42 @@
+[
+    {
+        "Time": "12:30 PM",
+        "Title": "Registration"
+    },
+    {
+        "Time": "01:00 PM",
+        "Title": "Welcome and Introduction"
+    },
+    {
+        "Time": "01:15 PM",
+        "Title": "Ice Breaker"
+    },
+    {
+        "Time": "01:45 PM",
+        "Title": "Briefing Session"
+    },
+    {
+        "Time": "02:00 PM",
+        "Title": "Sponsor Challenge Presentation"
+    },
+    {
+        "Time": "02:30 PM",
+        "Title": "Open Q&A Interaction"
+    },
+    {
+        "Time": "03:00 PM",
+        "Title": "Lucky Draw"
+    },
+    {
+        "Time": "03:15 PM",
+        "Title": "Workshop: Duet AI for Devs (Participants Bring Their Own Laptop)"
+    },
+    {
+        "Time": "04:00 PM",
+        "Title": "Networking Mixer"
+    },
+    {
+        "Time": "04:30 PM",
+        "Title": "End of Pre-event"
+    }
+]
