@@ -2,6 +2,7 @@
 import { Image } from 'astro:assets'
 
 import Countdown from './Countdown.astro'
+import MovingBackground from './MovingBackground.astro'
 import BrowserFrame from './BrowserFrame.astro'
 import HackOManiaLogo from './HackOManiaLogo.astro'
 
@@ -17,6 +18,7 @@ import PointerSprite from '../assets/sprites/pointer.png'
 <!-- Desktop View -->
 <div id="hero-container" class="hidden md:block">
   <div class="flex flex-col gap-5 justify-center items-center relative" style="width:1220px; height: 553px;">
+    <MovingBackground customClasses='h-[140%]' />
     <Image class="to-animate absolute z-30 bottom-12 right-24" src={HeartSprite} width={151} densities={[2, 3]} quality="max" alt="" />
     <Image class="to-animate absolute z-30 bottom-12 left-16" src={ConsoleSprite} width={247} densities={[2, 3]} quality="max" alt="" />
     <Image id="spectacles" class="absolute z-30 top-7 left-[337px]" src={SpectaclesSprite} width={308} densities={[2, 3]} quality="max" alt="" />
@@ -42,6 +44,7 @@ import PointerSprite from '../assets/sprites/pointer.png'
 
 <!-- Mobile view -->
 <div class="flex flex-col gap-5 md:hidden justify-center items-center w-full relative px-4">
+  <MovingBackground customClasses='h-[140%]' />
   <Image class="absolute z-30 bottom-12 -right-4" width={66} densities={[1.5, 2, 3]} quality="max" src={BatterySprite}  alt="" />
   <Image class="absolute z-30 bottom-12 -left-4" width={102} densities={[1.5, 2, 3]} quality="max" src={ConsoleSprite} alt="" />
   <Image class="absolute z-30 -top-4 left-20" width={80} densities={[1.5, 2, 3]} quality="max" src={SpectaclesSprite}  alt="" />

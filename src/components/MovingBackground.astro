@@ -1,0 +1,32 @@
+---
+import { getImage } from "astro:assets";
+import cloud from "../assets/background/cloud.png";
+const background = await getImage({ src: cloud });
+
+interface Props {
+	customClasses?: string
+}
+const { customClasses = '' } = Astro.props;
+---
+
+<div
+	class={`absolute overflow-hidden w-full h-full ${customClasses}`}>
+	<div id="background" class="bg-repeat h-full bg-contain" style={`background-image: url('${background.src}')`} />
+</div>
+<style>
+	/* This animation is based on this article: https://css-tricks.com/books/fundamental-css-tactics/infinite-scrolling-background-image/ */
+	#background {
+		width: 4200px; /* The image width * 3 */
+		animation: slide 60s linear infinite;
+	}
+
+	/* Using translate is more performant than modifying background position */
+	@keyframes slide {
+		0% {
+			transform: translate3d(0, 0, 0);
+		}
+		100% {
+			transform: translate3d(-1400px, 0, 0); /* The image width */
+		}
+	}
+</style>
