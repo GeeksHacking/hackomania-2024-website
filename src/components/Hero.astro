@@ -18,7 +18,7 @@ import PointerSprite from '../assets/sprites/pointer.png'
 <!-- Desktop View -->
 <div id="hero-container" class="hidden md:block">
   <div class="flex flex-col gap-5 justify-center items-center relative" style="width:1220px; height: 553px;">
-    <MovingBackground customClasses='h-[140%]' />
+    <MovingBackground customClasses="h-[140%]" />
     <Image class="to-animate absolute z-30 bottom-12 right-24" src={HeartSprite} width={151} densities={[2, 3]} quality="max" alt="" />
     <Image class="to-animate absolute z-30 bottom-12 left-16" src={ConsoleSprite} width={247} densities={[2, 3]} quality="max" alt="" />
     <Image id="spectacles" class="absolute z-30 top-7 left-[337px]" src={SpectaclesSprite} width={308} densities={[2, 3]} quality="max" alt="" />
@@ -35,19 +35,36 @@ import PointerSprite from '../assets/sprites/pointer.png'
         </div>
       </BrowserFrame>
     </div>
-    <div class="rounded-lg bg-app-red text-white font-serif font-bold flex justify-center items-center p-5 relative">
-      <span class="uppercase">Registration coming soon!</span>
-      <Image id="hero-animation-trigger" class="absolute z-10 top-4 -right-20 cursor-pointer" src={PointerSprite} width={120} densities={[2, 3]} quality="max" alt="" />
+
+    <div class="flex gap-4 flex-col md:flex-row">
+      <div class="relative">
+        <Image id="hero-animation-trigger" class="absolute z-10 top-4 -right-20" src={PointerSprite} width={120} densities={[2, 3]} quality="max" alt="" />
+        <a
+          target="_blank"
+          href="https://hackomania2024.eventbrite.sg/?aff=website"
+          class="rounded-lg bg-app-red text-white font-serif font-bold flex justify-center items-center p-5 uppercase hover:bg-pink-900"
+        >
+          Register for hackathon!
+        </a>
+      </div>
+
+      <a
+        target="_blank"
+        href="https://hackomania2024-prehack.eventbrite.sg/?aff=website"
+        class="rounded-lg border border-app-red text-app-red font-serif font-bold flex justify-center items-center p-5 z-20 uppercase hover:text-pink-900 hover:border-pink-900"
+      >
+        Register for pre-event!
+      </a>
     </div>
   </div>
 </div>
 
 <!-- Mobile view -->
 <div class="flex flex-col gap-5 md:hidden justify-center items-center w-full relative px-4">
-  <MovingBackground customClasses='h-[140%]' />
-  <Image class="absolute z-30 bottom-12 -right-4" width={66} densities={[1.5, 2, 3]} quality="max" src={BatterySprite}  alt="" />
+  <MovingBackground customClasses="h-[140%]" />
+  <Image class="absolute z-30 bottom-12 -right-4" width={66} densities={[1.5, 2, 3]} quality="max" src={BatterySprite} alt="" />
   <Image class="absolute z-30 bottom-12 -left-4" width={102} densities={[1.5, 2, 3]} quality="max" src={ConsoleSprite} alt="" />
-  <Image class="absolute z-30 -top-4 left-20" width={80} densities={[1.5, 2, 3]} quality="max" src={SpectaclesSprite}  alt="" />
+  <Image class="absolute z-30 -top-4 left-20" width={80} densities={[1.5, 2, 3]} quality="max" src={SpectaclesSprite} alt="" />
 
   <div class="z-20 w-full relative">
     <div class="absolute z-30 -top-4 right-6">
@@ -60,10 +77,27 @@ import PointerSprite from '../assets/sprites/pointer.png'
       </div>
     </BrowserFrame>
   </div>
-  <div class="rounded-lg bg-app-red text-white font-serif font-bold text-xs flex justify-center items-center p-3 relative">
-    <span class="uppercase">Registration coming soon!</span>
-    <Image class="absolute z-10 top-1 -right-10" src={PointerSprite} width={60} densities={[2, 3]} quality="max" alt="" />
-  </div>
+
+    <div class="flex gap-4 flex-col md:flex-row">
+      <div class="relative">
+        <Image id="hero-animation-trigger" class="absolute z-10 top-4 -right-10" src={PointerSprite} width={60} densities={[2, 3]} quality="max" alt="" />
+        <a
+          target="_blank"
+          href="https://hackomania2024.eventbrite.sg/?aff=website"
+          class="rounded-lg bg-app-red text-white font-serif font-bold flex justify-center text-xs items-center p-3 uppercase hover:bg-pink-900"
+        >
+          Register for hackathon!
+        </a>
+      </div>
+
+      <a
+        target="_blank"
+        href="https://hackomania2024-prehack.eventbrite.sg/?aff=website"
+        class="rounded-lg border border-app-red text-app-red font-serif font-bold flex justify-center text-xs items-center p-3 z-20 uppercase hover:text-pink-900 hover:border-pink-900"
+      >
+        Register for pre-event!
+      </a>
+    </div>
 </div>
 
 <!-- Scale logic on desktop -->
@@ -125,28 +159,28 @@ import PointerSprite from '../assets/sprites/pointer.png'
 
 <!-- Animate hero container sprites -->
 <script lang="js">
-document.addEventListener('DOMContentLoaded', () => {
-  const heroContainer = document.getElementById('hero-container');
-  const sprites = heroContainer.querySelectorAll('img.to-animate');
-  const animationTriggerEl = document.getElementById('hero-animation-trigger');
+  document.addEventListener('DOMContentLoaded', () => {
+    const heroContainer = document.getElementById('hero-container')
+    const sprites = heroContainer.querySelectorAll('img.to-animate')
+    const animationTriggerEl = document.getElementById('hero-animation-trigger')
 
-  const animateSprites = () => {
-    sprites.forEach((sprite) => {
-      const depthFactor = 3;
-      // Generate random translateX and translateY values
-      const translateX = (Math.random() - 0.5) * 40 * depthFactor;
-      const translateY = (Math.random() - 0.5) * 40 * depthFactor;
+    const animateSprites = () => {
+      sprites.forEach((sprite) => {
+        const depthFactor = 3
+        // Generate random translateX and translateY values
+        const translateX = (Math.random() - 0.5) * 40 * depthFactor
+        const translateY = (Math.random() - 0.5) * 40 * depthFactor
 
-      sprite.style.transition = 'transform 1.5s linear'; // Smooth transition for the movement
-      sprite.style.transform = `translate(${translateX}px, ${translateY}px)`;
-    });
-  };
+        sprite.style.transition = 'transform 1.5s linear' // Smooth transition for the movement
+        sprite.style.transform = `translate(${translateX}px, ${translateY}px)`
+      })
+    }
 
-  animationTriggerEl.addEventListener('click', (event) => {
-    // if (heroContainer.getAttribute('data-state')) return;
-    heroContainer.setAttribute('data-state', 'animated');
-    animateSprites();
-    setInterval(animateSprites, 1500);
-  });
-});
+    animationTriggerEl.addEventListener('click', (event) => {
+      // if (heroContainer.getAttribute('data-state')) return;
+      heroContainer.setAttribute('data-state', 'animated')
+      animateSprites()
+      setInterval(animateSprites, 1500)
+    })
+  })
 </script>
