@@ -11,6 +11,7 @@ import AlbumCarousel from '../components/AlbumCarousel.astro'
 import firstPrize from '../assets/sprites/1st prize.png'
 import secondPrize from '../assets/sprites/2nd prize.png'
 import thirdPrize from '../assets/sprites/3rd prize.png'
+import mostLikedPrize from '../assets/sprites/most_liked_prize.png'
 
 import googleVenue from '../assets/sponsors/venue/google.png'
 import rakutenVenue from '../assets/sponsors/venue/rakuten.png'
@@ -36,8 +37,8 @@ const teamMembers = team.map(item => ({
   }
 }))
 const schedules = [
-  {name: "Pre-Hack Bash", details: preEventSchedule, date: format(parse('23/03/2024', 'DD/MM/YYYY'), 'full'), link: "https://www.eventbrite.sg/e/hackomania-2024-pre-hackathon-bash-tickets-822686546607"}, 
-  {name: "Hackathon Day 1", details: [], date: format(parse('06/04/2024', 'DD/MM/YYYY'), 'full') }, 
+  {name: "Pre-Hack Bash", details: preEventSchedule, date: format(parse('23/03/2024', 'DD/MM/YYYY'), 'full'), link: "https://www.eventbrite.sg/e/hackomania-2024-pre-hackathon-bash-tickets-822686546607"},
+  {name: "Hackathon Day 1", details: [], date: format(parse('06/04/2024', 'DD/MM/YYYY'), 'full') },
   {name: "Hackathon Day 2", details: [], date: format(parse('07/04/2024', 'DD/MM/YYYY'), 'full') }
 ]
 ---
@@ -90,7 +91,7 @@ const schedules = [
             <div class="flex flex-1 flex-col items-center justify-center">
               <Image src={firstPrize} width={150} alt="" />
               <div class="bg-[#F9F9F3] text-app-red text-bold py-4 w-full text-3xl rounded-2xl font-serif flex flex-col items-center justify-center drop-shadow-lg">
-                <p>Champion</p>  
+                <p>Champion</p>
                 <p>$1500</p>
               </div>
             </div>
@@ -100,14 +101,21 @@ const schedules = [
           <div class="flex flex-col items-center justify-center flex-1">
             <Image src={secondPrize} width={150} alt="" />
             <div class="bg-[#F9F9F3] text-app-red text-bold py-4 px-4 w-full text-3xl rounded-2xl font-serif flex flex-col items-center justify-center text-balance text-center drop-shadow-lg">
-              <p>1st Runner Up</p>    
+              <p>1st Runner Up</p>
               <p>$1000</p>
             </div>
           </div>
           <div class="flex flex-col items-center justify-center flex-1">
             <Image src={thirdPrize} width={150} alt="" />
             <div class="bg-[#F9F9F3] text-app-red text-bold py-4 px-4 w-full text-3xl rounded-2xl font-serif flex flex-col items-center justify-center text-balance text-center drop-shadow-lg">
-              <p>2nd Runner Up</p>  
+              <p>2nd Runner Up</p>
+              <p>$500</p>
+            </div>
+          </div>
+          <div class="flex flex-col items-center justify-center flex-1">
+            <Image src={mostLikedPrize} width={150} alt="" />
+            <div class="bg-[#F9F9F3] text-app-red text-bold py-4 px-4 w-full text-3xl rounded-2xl font-serif flex flex-col items-center justify-center text-balance text-center drop-shadow-lg">
+              <p>People's Choice</p>
               <p>$500</p>
             </div>
           </div>
@@ -129,10 +137,10 @@ const schedules = [
                   </a>
                 }
                 </h3>
-              
+
 
             <p class="text-lg lg:text-xl font-sans pb-7 text-app-red">{schedule.date}</p>
-     
+
             <div class="flex flex-col gap-4">
                 {schedule.details.map(session => (
                   <div class="flex flex-row gap-4">
@@ -144,7 +152,7 @@ const schedules = [
                 {schedule.details.length === 0 && (<p class="font-serif italic text-app-red">Coming soon!</p>)}
             </div>
           </div>
-            
+
         ))}
         </div>
       </BrowserFrame>
