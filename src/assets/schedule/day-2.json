@@ -1,0 +1,30 @@
+[
+    {
+        "Time": "12:00 AM",
+        "Title": "Midnight Surprise!"
+    },
+    {
+        "Time": "08:00 AM",
+        "Title": "Breakfast"
+    },
+    {
+        "Time": "12:15 PM",
+        "Title": "Lunch + Games 👾"
+    },
+    {
+        "Time": "01:30 PM",
+        "Title": "Prelim Judging"
+    },
+    {
+        "Time": "03:30 PM",
+        "Title": "Final Judging"
+    },
+    {
+        "Time": "05:00 PM",
+        "Title": "Prize Presentation"
+    },
+    {
+        "Time": "05:30 PM",
+        "Title": "End of HackOMania 2024"
+    }
+]

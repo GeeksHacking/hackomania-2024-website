@@ -24,6 +24,8 @@ import geekshacking from '../assets/geekshacking.png'
 import team from '../assets/team/team.json'
 
 import preEventSchedule from '../assets/schedule/pre_event.json'
+import day1Schedule from '../assets/schedule/day-1.json'
+import day2Schedule from '../assets/schedule/day-2.json'
 import MovingBackground from '../components/MovingBackground.astro'
 
 const teamMembers = team.map(item => ({
@@ -36,10 +38,11 @@ const teamMembers = team.map(item => ({
     twitter: item.Twitter
   }
 }))
+
 const schedules = [
   {name: "Pre-Hack Bash", details: preEventSchedule, date: format(parse('23/03/2024', 'DD/MM/YYYY'), 'full'), link: "https://www.eventbrite.sg/e/hackomania-2024-pre-hackathon-bash-tickets-822686546607"},
-  {name: "Hackathon Day 1", details: [], date: format(parse('06/04/2024', 'DD/MM/YYYY'), 'full') },
-  {name: "Hackathon Day 2", details: [], date: format(parse('07/04/2024', 'DD/MM/YYYY'), 'full') }
+  {name: "Hackathon Day 1", details: day1Schedule, date: format(parse('06/04/2024', 'DD/MM/YYYY'), 'full') },
+  {name: "Hackathon Day 2", details: day2Schedule, date: format(parse('07/04/2024', 'DD/MM/YYYY'), 'full') }
 ]
 ---
 
