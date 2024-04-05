@@ -1,373 +1,776 @@
 ---
-import { Image } from 'astro:assets'
-import { format, parse } from "@formkit/tempo"
-import Layout from '../layouts/Layout.astro'
+import { Image } from "astro:assets";
+import { format, parse } from "@formkit/tempo";
+import Layout from "../layouts/Layout.astro";
 
-import BrowserFrame from '../components/BrowserFrame.astro'
-import Hero from '../components/Hero.astro'
-import TeamProfileAvatar from '../components/TeamProfileAvatar.astro'
-import AlbumCarousel from '../components/AlbumCarousel.astro'
+import BrowserFrame from "../components/BrowserFrame.astro";
+import Hero from "../components/Hero.astro";
+import TeamProfileAvatar from "../components/TeamProfileAvatar.astro";
+import AlbumCarousel from "../components/AlbumCarousel.astro";
 
-import firstPrize from '../assets/sprites/1st prize.png'
-import secondPrize from '../assets/sprites/2nd prize.png'
-import thirdPrize from '../assets/sprites/3rd prize.png'
-import mostLikedPrize from '../assets/sprites/most_liked_prize.png'
+import firstPrize from "../assets/sprites/1st prize.png";
+import secondPrize from "../assets/sprites/2nd prize.png";
+import thirdPrize from "../assets/sprites/3rd prize.png";
+import mostLikedPrize from "../assets/sprites/most_liked_prize.png";
 
-import googleVenue from '../assets/sponsors/venue/google.png'
-import rakutenVenue from '../assets/sponsors/venue/rakuten.png'
+import googleVenue from "../assets/sponsors/venue/google.png";
+import rakutenVenue from "../assets/sponsors/venue/rakuten.png";
 
-import govtech from '../assets/sponsors/govtech.png'
-import spdigital from '../assets/sponsors/spdigital.png'
-import ahrefs from '../assets/sponsors/ahrefs.png'
-import dynamicweb from '../assets/sponsors/dynamicweb.png'
-import geekshacking from '../assets/geekshacking.png'
-import team from '../assets/team/team.json'
+import govtech from "../assets/sponsors/govtech.png";
+import spdigital from "../assets/sponsors/spdigital.png";
+import ahrefs from "../assets/sponsors/ahrefs.png";
+import dynamicweb from "../assets/sponsors/dynamicweb.png";
+import geekshacking from "../assets/geekshacking.png";
+import team from "../assets/team/team.json";
 
-import preEventSchedule from '../assets/schedule/pre_event.json'
-import day1Schedule from '../assets/schedule/day-1.json'
-import day2Schedule from '../assets/schedule/day-2.json'
-import MovingBackground from '../components/MovingBackground.astro'
+import preEventSchedule from "../assets/schedule/pre_event.json";
+import day1Schedule from "../assets/schedule/day-1.json";
+import day2Schedule from "../assets/schedule/day-2.json";
+import MovingBackground from "../components/MovingBackground.astro";
 
-const teamMembers = team.map(item => ({
-  name: item.Name,
-  profileImage: item['Profile Image'],
-  role: `${item.Team} ${item.Role && item.Role.length > 0 ? item.Role : "Team Member"}`,
-  links: {
-    linkedin: item.LinkedIn,
-    github: item.GitHub,
-    twitter: item.Twitter
-  }
-}))
+const teamMembers = team.map((item) => ({
+	name: item.Name,
+	profileImage: item["Profile Image"],
+	role: `${item.Team} ${item.Role && item.Role.length > 0 ? item.Role : "Team Member"}`,
+	links: {
+		linkedin: item.LinkedIn,
+		github: item.GitHub,
+		twitter: item.Twitter,
+	},
+}));
 
 const schedules = [
-  {name: "Pre-Hack Bash", details: preEventSchedule, date: format(parse('23/03/2024', 'DD/MM/YYYY'), 'full'), link: "https://www.eventbrite.sg/e/hackomania-2024-pre-hackathon-bash-tickets-822686546607"},
-  {name: "Hackathon Day 1", details: day1Schedule, date: format(parse('06/04/2024', 'DD/MM/YYYY'), 'full') },
-  {name: "Hackathon Day 2", details: day2Schedule, date: format(parse('07/04/2024', 'DD/MM/YYYY'), 'full') }
-]
+	{
+		name: "Pre-Hack Bash",
+		details: preEventSchedule,
+		date: format(parse("23/03/2024", "DD/MM/YYYY"), "full"),
+		link: "https://www.eventbrite.sg/e/hackomania-2024-pre-hackathon-bash-tickets-822686546607",
+	},
+	{
+		name: "Hackathon Day 1",
+		details: day1Schedule,
+		date: format(parse("06/04/2024", "DD/MM/YYYY"), "full"),
+	},
+	{
+		name: "Hackathon Day 2",
+		details: day2Schedule,
+		date: format(parse("07/04/2024", "DD/MM/YYYY"), "full"),
+	},
+];
 ---
 
 <Layout title="Hackomania 2024">
-  <main class="space-y-20 container mx-auto pb-32 md:px-10">
-    <section id="registration" class="flex flex-col h-fit md:h-screen items-center justify-center space-y-8 bg-no-repeat bg-cover bg-bottom">
-      <Hero />
-    </section>
-    <section id="about" class="scroll-m-16 space-y-6">
-      <div class="flex flex-col-reverse md:grid md:grid-cols-2 items-center">
-        <div class="flex flex-row gap-5 font-serif font-bold justify-center md:hidden">
-          <a href="https://hackomania2019.geekshacking.com/" target="_blank">
-            <div class="shadow-md hover:shadow-lg rounded-[10px] p-5 bg-app-yellow text-black">2019</div>
-          </a>
-          <a href="https://hackomania2018.geekshacking.com/" target="_blank">
-            <div class="shadow-md hover:shadow-lg rounded-[10px] p-5 bg-app-blue text-white">2018</div>
-          </a>
-        </div>
-        <div class="md:col-span-1 w-full">
-          <AlbumCarousel />
-        </div>
-        <div class="md:col-span-1 p-4 flex flex-col gap-8">
-          <div class="text-balance">
-            <h2 class="border-l-8 border-solid border-l-app-red pl-6 text-4xl md:text-6xl text-app-purple font-serif font-bold">HackOMania 2024</h2>
-            <p class="pt-8 font-sans">
-              HackOMania is an annual hackathon bringing students and tech professionals together over 24 hours to tackle real world challenges. Each year, the GeeksHacking community ventures into
-              unexplored realms to uncover boundless possibilities. For HackOMania 2024, we seek to Innovate for Tomorrow: Building a Resilient Future.
-            </p>
-          </div>
-          <div class="hidden md:flex md:flex-row gap-5 font-serif font-bold justify-center md:justify-start">
-            <a href="https://hackomania2019.geekshacking.com/" target="_blank">
-              <div class="shadow-md hover:shadow-lg rounded-[10px] p-5 bg-app-yellow text-black">2019</div>
-            </a>
-            <a href="https://hackomania2018.geekshacking.com/" target="_blank">
-              <div class="shadow-md hover:shadow-lg rounded-[10px] p-5 bg-app-blue text-white">2018</div>
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section id="prizes" class="scroll-m-16 space-y-6">
-      <div class="border-l-8 border-solid border-l-app-red pl-6">
-        <h2 class="text-4xl md:text-6xl text-app-purple font-serif font-bold">Prizes</h2>
-      </div>
-      <div class="relative">
-        <MovingBackground />
-        <div class="flex flex-col md:flex-row relative">
-            <div class="flex-1"></div>
-            <div class="flex flex-1 flex-col items-center justify-center">
-              <Image src={firstPrize} width={150} alt="" />
-              <div class="bg-[#F9F9F3] text-app-red text-bold py-4 w-full text-3xl rounded-2xl font-serif flex flex-col items-center justify-center drop-shadow-lg">
-                <p>Champion</p>
-                <p>$1500</p>
-              </div>
-            </div>
-            <div class="flex-1"></div>
-        </div>
-        <div class="flex flex-col md:flex-row gap-5 relative">
-          <div class="flex flex-col items-center justify-center flex-1">
-            <Image src={secondPrize} width={150} alt="" />
-            <div class="bg-[#F9F9F3] text-app-red text-bold py-4 px-4 w-full text-3xl rounded-2xl font-serif flex flex-col items-center justify-center text-balance text-center drop-shadow-lg">
-              <p>1st Runner Up</p>
-              <p>$1000</p>
-            </div>
-          </div>
-          <div class="flex flex-col items-center justify-center flex-1">
-            <Image src={thirdPrize} width={150} alt="" />
-            <div class="bg-[#F9F9F3] text-app-red text-bold py-4 px-4 w-full text-3xl rounded-2xl font-serif flex flex-col items-center justify-center text-balance text-center drop-shadow-lg">
-              <p>2nd Runner Up</p>
-              <p>$500</p>
-            </div>
-          </div>
-          <div class="flex flex-col items-center justify-center flex-1">
-            <Image src={mostLikedPrize} width={150} alt="" />
-            <div class="bg-[#F9F9F3] text-app-red text-bold py-4 px-4 w-full text-3xl rounded-2xl font-serif flex flex-col items-center justify-center text-balance text-center drop-shadow-lg">
-              <p>People's Choice</p>
-              <p>$500</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section id="schedule" class="scroll-m-16 space-y-6">
-      <div class="border-l-8 border-solid border-l-app-red pl-6">
-        <h2 class="text-4xl md:text-6xl text-app-purple font-serif font-bold">Event Schedule</h2>
-      </div>
-      <BrowserFrame>
-        <div class="flex flex-col lg:flex-row gap-8 p-8 lg:p-12">
-        {schedules.map((schedule) => (
-          <div class="flex-1">
+	<main class="space-y-20 container mx-auto pb-32 md:px-10">
+		<section
+			id="registration"
+			class="flex flex-col h-fit md:h-screen items-center justify-center space-y-8 bg-no-repeat bg-cover bg-bottom">
+			<Hero />
+		</section>
+		<section
+			id="about"
+			class="scroll-m-16 space-y-6">
+			<div class="flex flex-col-reverse md:grid md:grid-cols-2 items-center">
+				<div
+					class="flex flex-row gap-5 font-serif font-bold justify-center md:hidden">
+					<a
+						href="https://hackomania2019.geekshacking.com/"
+						target="_blank">
+						<div
+							class="shadow-md hover:shadow-lg rounded-[10px] p-5 bg-app-yellow text-black">
+							2019
+						</div>
+					</a>
+					<a
+						href="https://hackomania2018.geekshacking.com/"
+						target="_blank">
+						<div
+							class="shadow-md hover:shadow-lg rounded-[10px] p-5 bg-app-blue text-white">
+							2018
+						</div>
+					</a>
+				</div>
+				<div class="md:col-span-1 w-full">
+					<AlbumCarousel />
+				</div>
+				<div class="md:col-span-1 p-4 flex flex-col gap-8">
+					<div class="text-balance">
+						<h2
+							class="border-l-8 border-solid border-l-app-red pl-6 text-4xl md:text-6xl text-app-purple font-serif font-bold">
+							HackOMania 2024
+						</h2>
+						<p class="pt-8 font-sans">
+							HackOMania is an annual hackathon bringing students and tech
+							professionals together over 24 hours to tackle real world
+							challenges. Each year, the GeeksHacking community ventures into
+							unexplored realms to uncover boundless possibilities. For
+							HackOMania 2024, we seek to Innovate for Tomorrow: Building a
+							Resilient Future.
+						</p>
+					</div>
+					<div
+						class="hidden md:flex md:flex-row gap-5 font-serif font-bold justify-center md:justify-start">
+						<a
+							href="https://hackomania2019.geekshacking.com/"
+							target="_blank">
+							<div
+								class="shadow-md hover:shadow-lg rounded-[10px] p-5 bg-app-yellow text-black">
+								2019
+							</div>
+						</a>
+						<a
+							href="https://hackomania2018.geekshacking.com/"
+							target="_blank">
+							<div
+								class="shadow-md hover:shadow-lg rounded-[10px] p-5 bg-app-blue text-white">
+								2018
+							</div>
+						</a>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section
+			id="challenges"
+			class="scroll-m-16 space-y-6">
+			<div class="border-l-8 border-solid border-l-app-red pl-6">
+				<h2 class="text-4xl md:text-6xl text-app-purple font-serif font-bold">
+					Challenges
+				</h2>
+			</div>
+			<div class="flex flex-col md:flex-row gap-0 md:gap-16">
+				<div class="flex flex-col flex-1 gap-8">
+					<BrowserFrame>
+						<div
+							class="p-8 flex flex-col gap-8 items-center justify-center overflow-hidden">
+							<Image
+								src={govtech}
+								alt="GovTech Stack Community"
+								class="h-[80px] md:h-[120px] lg:h-[140px] w-auto object-contain"
+							/>
+						</div>
+						<p
+							class="text-lg bg-app-yellow font-bold text-app-purple text-center p-4">
+							GovTech Singapore Hack For Public Good Challenge: <br />Making
+							Government Schemes Accessible
+						</p>
+						<a
+							target="_blank"
+							aria-label="Download challenge statement PDF"
+							href="challenge_statements/HackOMania_ChallengeStatements_GovTech.pdf"
+							class="group bg-app-red gap-4 text-white font-sans font-bold flex justify-center items-center p-3 hover:bg-pink-900 transition-all">
+							<svg
+								class="shrink-0 group-hover:opacity-100 group-focus:opacity-100 opacity-100 md:opacity-0 transition-opacity duration-200"
+								width="16"
+								height="16"
+								viewBox="0 0 58 48"
+								fill="none"
+								xmlns="http://www.w3.org/2000/svg">
+								<path
+									d="M0.96875 10.125V0.75H10.3438V10.125H0.96875ZM10.3438 10.125V0.75H19.7188V10.125H10.3438ZM19.7188 19.5V10.125H29.0938V19.5H19.7188ZM29.0938 19.5V10.125H38.4688V19.5H29.0938ZM38.4688 28.875V19.5H47.844V28.875H38.4688ZM47.844 28.875V19.5H57.219V28.875H47.844ZM19.7188 38.25V28.875H29.0938V38.25H19.7188ZM29.0938 38.25V28.875H38.4688V38.25H29.0938ZM0.96875 47.625V38.25H10.3438V47.625H0.96875ZM10.3438 47.625V38.25H19.7188V47.625H10.3438Z"
+									fill="white"
+								></path>
+							</svg>
+							<p>Download PDF</p>
+						</a>
+					</BrowserFrame>
+					<BrowserFrame>
+						<div class="p-8 flex flex-col gap-8 items-center justify-center">
+							<Image
+								src={ahrefs}
+								alt="Ahrefs"
+								class="h-[60px] md:h-[120px] lg:h-[140px] w-auto object-contain"
+							/>
+						</div>
+						<p
+							class="text-lg bg-app-yellow font-bold text-app-purple text-center p-4">
+							Utilizing Big Data for Societal Challenges
+						</p>
+						<a
+							target="_blank"
+							aria-label="Download challenge statement PDF"
+							href="challenge_statements/HackOMania_ChallengeStatements_Ahrefs.pdf"
+							class="group bg-app-red gap-4 text-white font-sans font-bold flex justify-center items-center p-3 hover:bg-pink-900 transition-all">
+							<svg
+								class="shrink-0 group-hover:opacity-100 group-focus:opacity-100 opacity-100 md:opacity-0 transition-opacity duration-200"
+								width="16"
+								height="16"
+								viewBox="0 0 58 48"
+								fill="none"
+								xmlns="http://www.w3.org/2000/svg">
+								<path
+									d="M0.96875 10.125V0.75H10.3438V10.125H0.96875ZM10.3438 10.125V0.75H19.7188V10.125H10.3438ZM19.7188 19.5V10.125H29.0938V19.5H19.7188ZM29.0938 19.5V10.125H38.4688V19.5H29.0938ZM38.4688 28.875V19.5H47.844V28.875H38.4688ZM47.844 28.875V19.5H57.219V28.875H47.844ZM19.7188 38.25V28.875H29.0938V38.25H19.7188ZM29.0938 38.25V28.875H38.4688V38.25H29.0938ZM0.96875 47.625V38.25H10.3438V47.625H0.96875ZM10.3438 47.625V38.25H19.7188V47.625H10.3438Z"
+									fill="white"
+								></path>
+							</svg>
+							<p>Download PDF</p>
+						</a>
+					</BrowserFrame>
+				</div>
+				<div class="flex flex-col flex-1 gap-8 pt-8 md:pt-16">
+					<BrowserFrame>
+						<div class="p-8 flex flex-col gap-8 items-center justify-center">
+							<Image
+								src={spdigital}
+								alt="SPDigital"
+								class="h-[60px] md:h-[120px] lg:h-[140px] w-auto object-contain"
+							/>
+						</div>
+						<p
+							class="text-lg bg-app-yellow font-bold text-app-purple text-center p-4">
+							Powering the future sustainably
+						</p>
+						<a
+							target="_blank"
+							aria-label="Download challenge statement PDF"
+							href="challenge_statements/HackOMania_ChallengeStatements_SPGroup.pdf"
+							class="group bg-app-red gap-4 text-white font-sans font-bold flex justify-center items-center p-3 hover:bg-pink-900 transition-all">
+							<svg
+								class="shrink-0 group-hover:opacity-100 group-focus:opacity-100 opacity-100 md:opacity-0 transition-opacity duration-200"
+								width="16"
+								height="16"
+								viewBox="0 0 58 48"
+								fill="none"
+								xmlns="http://www.w3.org/2000/svg">
+								<path
+									d="M0.96875 10.125V0.75H10.3438V10.125H0.96875ZM10.3438 10.125V0.75H19.7188V10.125H10.3438ZM19.7188 19.5V10.125H29.0938V19.5H19.7188ZM29.0938 19.5V10.125H38.4688V19.5H29.0938ZM38.4688 28.875V19.5H47.844V28.875H38.4688ZM47.844 28.875V19.5H57.219V28.875H47.844ZM19.7188 38.25V28.875H29.0938V38.25H19.7188ZM29.0938 38.25V28.875H38.4688V38.25H29.0938ZM0.96875 47.625V38.25H10.3438V47.625H0.96875ZM10.3438 47.625V38.25H19.7188V47.625H10.3438Z"
+									fill="white"
+								></path>
+							</svg>
+							<p>Download PDF</p>
+							<p></p>
+						</a>
+					</BrowserFrame>
+					<BrowserFrame>
+						<div class="p-8 flex flex-col gap-8 items-center justify-center">
+							<Image
+								src={dynamicweb}
+								alt="Dynamic Web"
+								class="h-[60px] md:h-[120px] lg:h-[140px] w-auto object-contain"
+							/>
+						</div>
+						<p
+						class="text-lg bg-app-yellow font-bold text-app-purple text-center p-4">
+						DynamicWeb AI Innovation
+					</p>
+						<a
+							target="_blank"
+							aria-label="Download challenge statement PDF"
+							href="challenge_statements/HackOMania_ChallengeStatements_DynamicWeb.pdf"
+							class="group bg-app-red gap-4 text-white font-sans font-bold flex justify-center items-center p-3 hover:bg-pink-900 transition-all">
+							<svg
+								class="shrink-0 group-hover:opacity-100 group-focus:opacity-100 opacity-100 md:opacity-0 transition-opacity duration-200"
+								width="16"
+								height="16"
+								viewBox="0 0 58 48"
+								fill="none"
+								xmlns="http://www.w3.org/2000/svg">
+								<path
+									d="M0.96875 10.125V0.75H10.3438V10.125H0.96875ZM10.3438 10.125V0.75H19.7188V10.125H10.3438ZM19.7188 19.5V10.125H29.0938V19.5H19.7188ZM29.0938 19.5V10.125H38.4688V19.5H29.0938ZM38.4688 28.875V19.5H47.844V28.875H38.4688ZM47.844 28.875V19.5H57.219V28.875H47.844ZM19.7188 38.25V28.875H29.0938V38.25H19.7188ZM29.0938 38.25V28.875H38.4688V38.25H29.0938ZM0.96875 47.625V38.25H10.3438V47.625H0.96875ZM10.3438 47.625V38.25H19.7188V47.625H10.3438Z"
+									fill="white"
+								></path>
+							</svg>
+							<p>Download PDF</p>
+						</a>
+					</BrowserFrame>
+				</div>
+			</div>
+		</section>
+		<section
+			id="prizes"
+			class="scroll-m-16 space-y-6">
+			<div class="border-l-8 border-solid border-l-app-red pl-6">
+				<h2 class="text-4xl md:text-6xl text-app-purple font-serif font-bold">
+					Prizes
+				</h2>
+			</div>
+			<div class="relative">
+				<MovingBackground />
+				<div class="flex flex-col md:flex-row relative">
+					<div class="flex-1"></div>
+					<div class="flex flex-1 flex-col items-center justify-center">
+						<Image
+							src={firstPrize}
+							width={150}
+							alt=""
+						/>
+						<div
+							class="bg-[#F9F9F3] text-app-red text-bold py-4 w-full text-3xl rounded-2xl font-serif flex flex-col items-center justify-center drop-shadow-lg">
+							<p>Champion</p>
+							<p>$1500</p>
+						</div>
+					</div>
+					<div class="flex-1"></div>
+				</div>
+				<div class="flex flex-col md:flex-row gap-5 relative">
+					<div class="flex flex-col items-center justify-center flex-1">
+						<Image
+							src={secondPrize}
+							width={150}
+							alt=""
+						/>
+						<div
+							class="bg-[#F9F9F3] text-app-red text-bold py-4 px-4 w-full text-3xl rounded-2xl font-serif flex flex-col items-center justify-center text-balance text-center drop-shadow-lg">
+							<p>1st Runner Up</p>
+							<p>$1000</p>
+						</div>
+					</div>
+					<div class="flex flex-col items-center justify-center flex-1">
+						<Image
+							src={thirdPrize}
+							width={150}
+							alt=""
+						/>
+						<div
+							class="bg-[#F9F9F3] text-app-red text-bold py-4 px-4 w-full text-3xl rounded-2xl font-serif flex flex-col items-center justify-center text-balance text-center drop-shadow-lg">
+							<p>2nd Runner Up</p>
+							<p>$500</p>
+						</div>
+					</div>
+					<div class="flex flex-col items-center justify-center flex-1">
+						<Image
+							src={mostLikedPrize}
+							width={150}
+							alt=""
+						/>
+						<div
+							class="bg-[#F9F9F3] text-app-red text-bold py-4 px-4 w-full text-3xl rounded-2xl font-serif flex flex-col items-center justify-center text-balance text-center drop-shadow-lg">
+							<p>People's Choice</p>
+							<p>$500</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section
+			id="schedule"
+			class="scroll-m-16 space-y-6">
+			<div class="border-l-8 border-solid border-l-app-red pl-6">
+				<h2 class="text-4xl md:text-6xl text-app-purple font-serif font-bold">
+					Event Schedule
+				</h2>
+			</div>
+			<BrowserFrame>
+				<div class="flex flex-col lg:flex-row gap-8 p-8 lg:p-12">
+					{
+						schedules.map((schedule) => (
+							<div class="flex-1">
+								<h3 class="text-2xl lg:text-4xl font-serif font-bold pb-1 text-app-purple flex-shrink">
+									{schedule.name}
+									{schedule.link && (
+										<a
+											target="_blank"
+											href={schedule.link}
+											class="ms-2 inline-block rounded hover:drop-shadow-md h-6 lg:h-8">
+											<svg
+												xmlns="http://www.w3.org/2000/svg"
+												width="100%"
+												height="100%"
+												viewBox="0 0 24 24">
+												<path
+													fill="#45AACB"
+													d="m16 8.4l-8.9 8.9q-.275.275-.7.275t-.7-.275q-.275-.275-.275-.7t.275-.7L14.6 7H7q-.425 0-.712-.288T6 6q0-.425.288-.712T7 5h10q.425 0 .713.288T18 6v10q0 .425-.288.713T17 17q-.425 0-.712-.288T16 16z"
+												/>
+											</svg>
+										</a>
+									)}
+								</h3>
 
-              <h3 class="text-2xl lg:text-4xl font-serif font-bold pb-1 text-app-purple flex-shrink">{schedule.name}{schedule.link &&
-                  <a target="_blank" href={schedule.link} class="ms-2 inline-block rounded hover:drop-shadow-md h-6 lg:h-8">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24"><path fill="#45AACB" d="m16 8.4l-8.9 8.9q-.275.275-.7.275t-.7-.275q-.275-.275-.275-.7t.275-.7L14.6 7H7q-.425 0-.712-.288T6 6q0-.425.288-.712T7 5h10q.425 0 .713.288T18 6v10q0 .425-.288.713T17 17q-.425 0-.712-.288T16 16z"/></svg>
-                  </a>
-                }
-                </h3>
+								<p class="text-lg lg:text-xl font-sans pb-7 text-app-red">
+									{schedule.date}
+								</p>
 
+								<div class="flex flex-col gap-4">
+									{schedule.details.map((session) => (
+										<div class="flex flex-row gap-4">
+											<p class="text-app-red font-sans flex-shrink-0">
+												{session.Time}
+											</p>
+											<div
+												role="separator"
+												class="w-1 flex flex-shrink-0 bg-app-red"
+											/>
+											<p class="text-app-purple font-sans font-semibold text-wrap">
+												{session.Title}
+											</p>
+										</div>
+									))}
+									{schedule.details.length === 0 && (
+										<p class="font-serif italic text-app-red">Coming soon!</p>
+									)}
+								</div>
+							</div>
+						))
+					}
+				</div>
+			</BrowserFrame>
+		</section>
+		<section
+			id="rules"
+			class="scroll-m-16 space-y-6">
+			<div class="border-l-8 border-solid border-l-app-red pl-6">
+				<h2 class="text-4xl md:text-6xl text-app-purple font-serif font-bold">
+					9 Golden Rules
+				</h2>
+			</div>
+			<div class="w-full text-wrap px-8">
+				<ol
+					class="list-outside list-decimal font-sans text-base flex flex-col gap-4">
+					<li>
+						Team up with <b>3 to 5</b> fellow innovators to embark on this exciting
+						journey together.
+					</li>
+					<li>
+						Keep the hackathon spirit alive with at least one team member
+						present at the event venue throughout the event.
+					</li>
+					<li>
+						Dive into the heart of the theme by addressing <b
+							>at least one of the provided challenges</b
+						> head-on.
+					</li>
+					<li>
+						Each team is the master of their own destiny! Take charge of your
+						data and systems, and own the intellectual property you create
+						during the hackathon.
+					</li>
+					<li>
+						All teams are required to use a GitHub repository which is <b
+							>set to public upon submission</b
+						>.
+					</li>
+					<li>
+						It's a race against the clock! Ensure all work is finalized within
+						the hackathon duration.
+					</li>
+					<li>
+						Step into the spotlight with a <b>5-minute pitch</b> of your project—your
+						chance to dazzle the judges!
+					</li>
+					<li>
+						Play nice, play fair! Teams may face disqualification at the
+						discretion of the organizers for breaking the rules or unsporting
+						behavior.
+					</li>
+					<li>
+						Keep it clean, folks! Pre-coded work is strictly off-limits—let's
+						see what you can create from scratch!
+					</li>
+				</ol>
+			</div>
+		</section>
+		<section
+			id="venue"
+			class="scroll-m-16 space-y-6">
+			<div class="border-l-8 border-solid border-l-app-red pl-6">
+				<h2 class="text-4xl md:text-6xl text-app-purple font-serif font-bold">
+					Venue
+				</h2>
+			</div>
 
-            <p class="text-lg lg:text-xl font-sans pb-7 text-app-red">{schedule.date}</p>
+			<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+				<div class="space-y-10">
+					<h3 class="uppercase font-serif font-semibold text-xl">Pre-event</h3>
 
-            <div class="flex flex-col gap-4">
-                {schedule.details.map(session => (
-                  <div class="flex flex-row gap-4">
-                    <p class="text-app-red font-sans flex-shrink-0">{session.Time}</p>
-                    <div role="separator" class="w-1 flex flex-shrink-0 bg-app-red"></div>
-                    <p class="text-app-purple font-sans font-semibold text-wrap">{session.Title}</p>
-                  </div>
-                ))}
-                {schedule.details.length === 0 && (<p class="font-serif italic text-app-red">Coming soon!</p>)}
-            </div>
-          </div>
+					<div class="font-sans text-lg space-y-2">
+						<div class="flex justify-between">
+							<span class="text-app-purple">Date:</span>
+							<span class="text-right">23 March 2024</span>
+						</div>
 
-        ))}
-        </div>
-      </BrowserFrame>
-    </section>
-    <section id="rules" class="scroll-m-16 space-y-6">
-      <div class="border-l-8 border-solid border-l-app-red pl-6">
-        <h2 class="text-4xl md:text-6xl text-app-purple font-serif font-bold">9 Golden Rules</h2>
-      </div>
-      <div class="w-full text-wrap px-8">
-        <ol class="list-outside list-decimal font-sans text-base flex flex-col gap-4 ">
-          <li>Team up with <b>3 to 5</b> fellow innovators to embark on this exciting journey together.</li>
-          <li>Keep the hackathon spirit alive with at least one team member present at the event venue throughout the event.</li>
-          <li>Dive into the heart of the theme by addressing <b>at least one of the provided challenges</b> head-on. </li>
-          <li>Each team is the master of their own destiny! Take charge of your data and systems, and own the intellectual property you create during the hackathon.</li>
-          <li>All teams are required to use a GitHub repository which is <b>set to public upon submission</b>.</li>
-          <li>It's a race against the clock! Ensure all work is finalized within the hackathon duration.</li>
-          <li>Step into the spotlight with a <b>5-minute pitch</b> of your project—your chance to dazzle the judges!</li>
-          <li>Play nice, play fair! Teams may face disqualification at the discretion of the organizers for breaking the rules or unsporting behavior.</li>
-          <li>Keep it clean, folks! Pre-coded work is strictly off-limits—let's see what you can create from scratch!</li></ol>
-      </div>
-    </section>
-    <section id="venue" class="scroll-m-16 space-y-6">
-      <div class="border-l-8 border-solid border-l-app-red pl-6">
-        <h2 class="text-4xl md:text-6xl text-app-purple font-serif font-bold">Venue</h2>
-      </div>
+						<div class="flex justify-between">
+							<span class="text-app-purple">Time:</span>
+							<span class="text-right">1:00PM - 4:30PM</span>
+						</div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div class="space-y-10">
-          <h3 class="uppercase font-serif font-semibold text-xl">Pre-event</h3>
+						<div class="flex justify-between">
+							<span class="text-app-purple">Venue:</span>
+							<span class="text-right">Google Developers Space</span>
+						</div>
+					</div>
 
-          <div class="font-sans text-lg space-y-2">
-            <div class="flex justify-between">
-              <span class="text-app-purple">Date:</span>
-              <span class="text-right">23 March 2024</span>
-            </div>
+					<iframe
+						src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.8288719304883!2d103.79815071182185!3d1.2760468618006011!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da1b5462d8ef69%3A0xb8f399b9068aad7!2sGoogle%20Developers%20Space%2C%20Singapore!5e0!3m2!1sen!2ssg!4v1706754275234!5m2!1sen!2ssg"
+						class="w-full h-[500px]"
+						style="border:0;"
+						allowfullscreen=""
+						loading="lazy"
+						referrerpolicy="no-referrer-when-downgrade"
+					></iframe>
+				</div>
 
-            <div class="flex justify-between">
-              <span class="text-app-purple">Time:</span>
-              <span class="text-right">1:00PM - 4:30PM</span>
-            </div>
+				<div class="space-y-10">
+					<h3 class="uppercase font-serif font-semibold text-xl">Main event</h3>
 
-            <div class="flex justify-between">
-              <span class="text-app-purple">Venue:</span>
-              <span class="text-right">Google Developers Space</span>
-            </div>
-          </div>
+					<div class="font-sans text-lg space-y-2">
+						<div class="flex justify-between">
+							<span class="text-app-purple">Date:</span>
+							<span class="text-right">6 - 7 April 2024</span>
+						</div>
 
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.8288719304883!2d103.79815071182185!3d1.2760468618006011!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da1b5462d8ef69%3A0xb8f399b9068aad7!2sGoogle%20Developers%20Space%2C%20Singapore!5e0!3m2!1sen!2ssg!4v1706754275234!5m2!1sen!2ssg"
-            class="w-full h-[500px]"
-            style="border:0;"
-            allowfullscreen=""
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </div>
+						<div class="flex justify-between">
+							<span class="text-app-purple">Time:</span>
+							<span class="text-right">11:30AM - 6:00PM</span>
+						</div>
 
-        <div class="space-y-10">
-          <h3 class="uppercase font-serif font-semibold text-xl">Main event</h3>
+						<div class="flex justify-between">
+							<span class="text-app-purple">Venue:</span>
+							<span class="text-right">Rakuten Asia, CapitaGreen</span>
+						</div>
+					</div>
 
-          <div class="font-sans text-lg space-y-2">
-            <div class="flex justify-between">
-              <span class="text-app-purple">Date:</span>
-              <span class="text-right">6 - 7 April 2024</span>
-            </div>
+					<iframe
+						src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.819799045889!2d103.8477107128912!3d1.2818841987005645!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da19a42f7f2a83%3A0x3ff65bbf62f7e45a!2sRakuten%20Asia!5e0!3m2!1sen!2ssg!4v1703227080676!5m2!1sen!2ssg"
+						class="w-full h-[500px]"
+						style="border:0;"
+						allowfullscreen=""
+						loading="lazy"
+						referrerpolicy="no-referrer-when-downgrade"
+					></iframe>
+				</div>
+			</div>
+		</section>
 
-            <div class="flex justify-between">
-              <span class="text-app-purple">Time:</span>
-              <span class="text-right">11:30AM - 6:00PM</span>
-            </div>
+		<section
+			id="sponsors"
+			class="scroll-m-16 space-y-6">
+			<div class="border-l-8 border-solid border-l-app-red pl-6">
+				<h2 class="text-4xl md:text-6xl text-app-purple font-serif font-bold">
+					Sponsors
+				</h2>
+			</div>
 
-            <div class="flex justify-between">
-              <span class="text-app-purple">Venue:</span>
-              <span class="text-right">Rakuten Asia, CapitaGreen</span>
-            </div>
-          </div>
+			<BrowserFrame>
+				<div
+					class="p-4 md:p-6 lg:p-10 flex flex-col items-center justify-center gap-4">
+					<div
+						class="flex items-center justify-center flex-col p-4 md:p-8 lg:p-12">
+						<h2
+							class="text-xl md:text-4xl lg:text-5xl font-semibold text-app-red pb-4 md:pb-12 font-serif">
+							Platinum Sponsor
+						</h2>
+						<a
+							target="_blank"
+							aria-label="Download challenge statement PDF"
+							class="hover:drop-shadow-xl focus:drop-shadow-2xl rounded"
+							href="https://www.meetup.com/stack-by-govtech-singapore/">
+							<Image
+								src={govtech}
+								alt="GovTech - Stack Community"
+								class="h-[80px] md:h-[160px] lg:h-[200px] w-auto object-contain"
+							/>
+						</a>
+					</div>
+					<div
+						class="flex items-center justify-center flex-col p-4 md:p-8 lg:p-12">
+						<h2
+							class="text-xl md:text-4xl lg:text-5xl font-semibold text-app-red pb-4 md:pb-12 font-serif">
+							Gold Sponsors
+						</h2>
+						<div
+							class="flex items-center justify-center flex-row gap-1 md:gap-4 lg:gap-8">
+							<div class="flex-1">
+								<a
+									target="_blank"
+									class="hover:drop-shadow-xl focus:drop-shadow-2xl rounded"
+									href="https://www.spgroup.com.sg">
+									<Image
+										src={spdigital}
+										alt="SPDigital"
+										class="h-[60px] md:h-[120px] lg:h-[140px] w-auto object-contain"
+									/>
+								</a>
+							</div>
+							<div class="flex-1">
+								<a
+									target="_blank"
+									class="hover:drop-shadow-xl focus:drop-shadow-2xl rounded"
+									href="https://ahrefs.com">
+									<Image
+										src={ahrefs}
+										alt="Ahrefs"
+										class="h-[60px] md:h-[120px] lg:h-[140px] w-auto object-contain"
+									/>
+								</a>
+							</div>
+							<div class="flex-1">
+								<a
+									target="_blank"
+									class="hover:drop-shadow-xl focus:drop-shadow-2xl rounded"
+									href="https://dynamicweb.com/">
+									<Image
+										src={dynamicweb}
+										alt="DynamicWeb"
+										class="h-[60px] md:h-[120px] lg:h-[140px] w-auto object-contain"
+									/>
+								</a>
+							</div>
+						</div>
+					</div>
+					<div
+						class="flex items-center justify-center flex-col p-1 pb-4 md:p-8 lg:p-12">
+						<h2
+							class="text-xl md:text-4xl lg:text-5xl font-semibold text-app-red pb-4 md:pb-12 font-serif">
+							Venue sponsors
+						</h2>
+						<div
+							class="flex items-center justify-center flex-col md:flex-row gap-4 lg:gap-8">
+							<a
+								class="flex-1 flex justify-center items-center hover:drop-shadow-xl focus:drop-shadow-2xl rounded"
+								href="https://global.rakuten.com/corp/careers"
+								target="_blank"
+								rel="noreferrer">
+								<Image
+									src={rakutenVenue}
+									alt="Rakuten"
+									class="object-contain h-[40px] md:h-[60px] lg:h-[100px] w-auto"
+								/>
+							</a>
+							<a
+								class="flex-1 flex justify-center items-center hover:drop-shadow-xl focus:drop-shadow-2xl rounded"
+								href="https://sites.google.com/corp/view/devspace-sg/home"
+								target="_blank"
+								rel="noreferrer">
+								<Image
+									src={googleVenue}
+									alt="Google"
+									class="object-contain h-[20px] md:h-[120px] lg:h-[140px] w-auto"
+								/>
+							</a>
+						</div>
+					</div>
+				</div>
+			</BrowserFrame>
+		</section>
 
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.819799045889!2d103.8477107128912!3d1.2818841987005645!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da19a42f7f2a83%3A0x3ff65bbf62f7e45a!2sRakuten%20Asia!5e0!3m2!1sen!2ssg!4v1703227080676!5m2!1sen!2ssg"
-            class="w-full h-[500px]"
-            style="border:0;"
-            allowfullscreen=""
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </div>
-      </div>
-    </section>
+		<section
+			id="team"
+			class="scroll-m-16 space-y-6">
+			<div class="border-l-8 border-solid border-l-app-red pl-6">
+				<h2 class="text-4xl md:text-6xl text-app-purple font-serif font-bold">
+					Our team
+				</h2>
+			</div>
+			<div class="grid grid-cols-2 md:grid-cols-4 gap-5">
+				{
+					teamMembers.map((member) => (
+						<TeamProfileAvatar
+							name={member.name}
+							role={member.role}
+							profileImage={member.profileImage}
+							links={member.links}
+						/>
+					))
+				}
+			</div>
+		</section>
 
-    <section id="sponsors" class="scroll-m-16 space-y-6">
-      <div class="border-l-8 border-solid border-l-app-red pl-6">
-        <h2 class="text-4xl md:text-6xl text-app-purple font-serif font-bold">Sponsors</h2>
-      </div>
+		<section
+			id="geekshacking"
+			class="space-y-6 flex flex-col md:flex-row gap-10">
+			<a
+				href="https://geekshacking.com/"
+				target="_blank">
+				<Image
+					src={geekshacking}
+					alt="GeeksHacking"
+					class="min-w-[300px] w-[400px] mx-auto object-contain"
+				/>
+			</a>
 
-      <BrowserFrame>
-        <div class="p-4 md:p-6 lg:p-10 flex flex-col items-center justify-center gap-4">
-          <div class="flex items-center justify-center flex-col p-4 md:p-8 lg:p-12">
-            <h2 class="text-xl md:text-4xl lg:text-5xl font-semibold text-app-red pb-4 md:pb-12 font-serif">Platinum Sponsor</h2>
-            <a target="_blank" class="hover:drop-shadow-xl focus:drop-shadow-2xl rounded" href="https://www.meetup.com/stack-by-govtech-singapore/">
-              <Image src={govtech} alt="GovTech - Stack Community" class="h-[80px] md:h-[160px] lg:h-[200px] w-auto object-contain" />
-            </a>
-          </div>
-          <div class="flex items-center justify-center flex-col p-4 md:p-8 lg:p-12">
-            <h2 class="text-xl md:text-4xl lg:text-5xl font-semibold text-app-red pb-4 md:pb-12 font-serif">Gold Sponsors</h2>
-            <div class="flex items-center justify-center flex-row gap-1 md:gap-4 lg:gap-8">
-              <div class="flex-1">
-                <a target="_blank" class="hover:drop-shadow-xl focus:drop-shadow-2xl rounded" href="https://www.spgroup.com.sg">
-                  <Image src={spdigital} alt="SPDigital" class="h-[60px] md:h-[120px] lg:h-[140px] w-auto object-contain" />
-                </a>
-              </div>
-              <div class="flex-1">
-                <a target="_blank" class="hover:drop-shadow-xl focus:drop-shadow-2xl rounded" href="https://ahrefs.com">
-                  <Image src={ahrefs} alt="Ahrefs" class="h-[60px] md:h-[120px] lg:h-[140px] w-auto object-contain" />
-                </a>
-              </div>
-              <div class="flex-1">
-                <a target="_blank" class="hover:drop-shadow-xl focus:drop-shadow-2xl rounded" href="https://dynamicweb.com/">
-                  <Image src={dynamicweb} alt="DynamicWeb" class="h-[60px] md:h-[120px] lg:h-[140px] w-auto object-contain" />
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="flex items-center justify-center flex-col p-1 pb-4 md:p-8 lg:p-12">
-            <h2 class="text-xl md:text-4xl lg:text-5xl font-semibold text-app-red pb-4 md:pb-12 font-serif">Venue sponsors</h2>
-            <div class="flex items-center justify-center flex-col md:flex-row gap-4 lg:gap-8">
-              <a class="flex-1 flex justify-center items-center hover:drop-shadow-xl focus:drop-shadow-2xl rounded" href="https://global.rakuten.com/corp/careers" target="_blank" rel="noreferrer">
-                <Image src={rakutenVenue} alt="Rakuten" class="object-contain h-[40px] md:h-[60px] lg:h-[100px] w-auto" />
-              </a>
-              <a class="flex-1 flex justify-center items-center hover:drop-shadow-xl focus:drop-shadow-2xl rounded" href="https://sites.google.com/corp/view/devspace-sg/home" target="_blank" rel="noreferrer">
-              <Image src={googleVenue} alt="Google" class="object-contain h-[20px] md:h-[120px] lg:h-[140px] w-auto" />
-              </a>
-            </div>
-          </div>
-          </div>
-      </BrowserFrame>
-    </section>
+			<div class="space-y-6">
+				<div class="border-l-8 border-solid border-l-app-red pl-6">
+					<h2 class="text-4xl md:text-4xl text-app-purple font-serif font-bold">
+						GeeksHacking
+					</h2>
+				</div>
 
-    <section id="team" class="scroll-m-16 space-y-6">
-      <div class="border-l-8 border-solid border-l-app-red pl-6">
-        <h2 class="text-4xl md:text-6xl text-app-purple font-serif font-bold">Our team</h2>
-      </div>
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-5">
-        {teamMembers.map(member => (
-          <TeamProfileAvatar name={member.name} role={member.role} profileImage={member.profileImage} links={member.links} />
-        ))}
-        </div>
-    </section>
+				<p class="font-sans">
+					<a
+						href="https://geekshacking.com/"
+						target="_blank"
+						class="font-semibold underline text-app-red hover:text-white hover:bg-app-red"
+						>GeeksHacking</a
+					> is a geeky community that seeks to Give back and Grow together. We organize
+					events and workshops to help students and professionals alike to learn
+					and grow together. HackOMania is one of our flagship events that we organize
+					annually.
+				</p>
+			</div>
+		</section>
 
-    <section id="geekshacking" class="space-y-6 flex flex-col md:flex-row gap-10">
-      <a href="https://geekshacking.com/" target="_blank">
-        <Image src={geekshacking} alt="GeeksHacking" class="min-w-[300px] w-[400px] mx-auto object-contain" />
-      </a>
+		<section
+			id="contact"
+			class="scroll-m-16 space-y-6">
+			<div class="border-l-8 border-solid border-l-app-red pl-6">
+				<h2 class="text-4xl md:text-6xl text-app-purple font-serif font-bold">
+					Contact Us!
+				</h2>
+			</div>
 
-      <div class="space-y-6">
-        <div class="border-l-8 border-solid border-l-app-red pl-6">
-          <h2 class="text-4xl md:text-4xl text-app-purple font-serif font-bold">GeeksHacking</h2>
-        </div>
+			<p class="font-sans">
+				Click
+				<a
+					target="_blank"
+					class="font-semibold underline text-app-red hover:text-white hover:bg-app-red"
+					href="https://t.me/+HlJIBuu9isA2ZWQ1">
+					here</a
+				>
+				to join GeeksHacking's Telegram channel!
+			</p>
 
-        <p class="font-sans">
-          <a href="https://geekshacking.com/" target="_blank" class="font-semibold underline text-app-red hover:text-white hover:bg-app-red">GeeksHacking</a> is a geeky community that seeks to Give back and Grow together. We organize events and workshops to help students and professionals alike to learn and grow together. HackOMania
-          is one of our flagship events that we organize annually.
-        </p>
-      </div>
-    </section>
-
-    <section id="contact" class="scroll-m-16 space-y-6">
-      <div class="border-l-8 border-solid border-l-app-red pl-6">
-        <h2 class="text-4xl md:text-6xl text-app-purple font-serif font-bold">Contact Us!</h2>
-      </div>
-
-      <p class="font-sans">
-        Click
-        <a target="_blank" class="font-semibold underline text-app-red hover:text-white hover:bg-app-red" href="https://t.me/+HlJIBuu9isA2ZWQ1"> here</a>
-        to join GeeksHacking's Telegram channel!
-      </p>
-
-      <hr />
-      <p class="font-sans">
-        <p class="font-serif">For general enquiries</p>
-        Drop us an email at <a target="_blank" class="text-app-red font-semibold underline hover:text-white hover:bg-app-red" href="mailto:contact@geekshacking.com">contact@geekshacking.com</a> or contact us through our <a target="_blank" class="text-app-red font-semibold underline hover:text-white hover:bg-app-red" href="https://www.facebook.com/groups/geekshacking/">Facebook page</a>.
-        <p class="font-serif">For sponsorships</p>
-        Please contact <a target="_blank" class="text-app-red font-semibold underline hover:text-white hover:bg-app-red" href="mailto:sponsor@geekshacking.com">sponsor@geekshacking.com</a> for sponsorship enquiries.
-      </p>
-    </section>
-  </main>
+			<hr />
+			<p class="font-sans">
+				<p class="font-serif">For general enquiries</p>
+				Drop us an email at <a
+					target="_blank"
+					class="text-app-red font-semibold underline hover:text-white hover:bg-app-red"
+					href="mailto:contact@geekshacking.com"
+					>contact@geekshacking.com</a
+				> or contact us through our <a
+					target="_blank"
+					class="text-app-red font-semibold underline hover:text-white hover:bg-app-red"
+					href="https://www.facebook.com/groups/geekshacking/"
+					>Facebook page</a
+				>.
+				<p class="font-serif">For sponsorships</p>
+				Please contact <a
+					target="_blank"
+					class="text-app-red font-semibold underline hover:text-white hover:bg-app-red"
+					href="mailto:sponsor@geekshacking.com"
+					>sponsor@geekshacking.com</a
+				> for sponsorship enquiries.
+			</p>
+		</section>
+	</main>
 </Layout>
 <script>
 	document.addEventListener("DOMContentLoaded", function () {
 		const observer = new IntersectionObserver(function (entries) {
 			entries.forEach((entry) => {
 				if (entry.isIntersecting) {
-					entry.target.classList.add('show');
+					entry.target.classList.add("show");
 				}
 			});
 		});
 
 		const targets = document.querySelectorAll(`section`);
-    if (targets.length === 0) return
-		targets.forEach(target => {
-      observer.observe(target);
-    })
+		if (targets.length === 0) return;
+		targets.forEach((target) => {
+			observer.observe(target);
+		});
 	});
 </script>
 <style>
-  section:nth-of-type(odd) {
-    transform: translate3d(-120px, 0, 0);
-  }
+	section:nth-of-type(odd) {
+		transform: translate3d(-120px, 0, 0);
+	}
 
-  section:nth-of-type(even) {
-    transform: translate3d(120px, 0, 0);
-  }
+	section:nth-of-type(even) {
+		transform: translate3d(120px, 0, 0);
+	}
 
-  section.show {
-    transform: translate3d(0, 0, 0);
-    transition: transform 0.5s ease;
-  }
+	section.show {
+		transform: translate3d(0, 0, 0);
+		transition: transform 0.5s ease;
+	}
 </style>
