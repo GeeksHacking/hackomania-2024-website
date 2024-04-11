@@ -3,7 +3,7 @@
         "Team": "Program",
         "Name": "Kate",
         "Role": "IC",
-        "Profile Image": "https://media.licdn.com/dms/image/D5603AQHZRsxXprOOXw/profile-displayphoto-shrink_400_400/0/1703859224928?e=1716422400&v=beta&t=BrSG2i_bt7jMa47o6GZHmucdjoXClq8ymPmNfCGSEF8",
+        "Profile Image": "/src/assets/team/kate.jpg",
         "LinkedIn": "https://www.linkedin.com/in/katedo",
         "Twitter": "",
         "GitHub": ""
@@ -12,7 +12,7 @@
         "Team": "Program",
         "Name": "Shishan",
         "Role": "Team - Core Member",
-        "Profile Image": "https://lh3.googleusercontent.com/d/1YeH9ySK0nb36yoE-P2qsZxvvO32P1Mo4",
+        "Profile Image": "/src/assets/team/shishan.jpg",
         "LinkedIn": "",
         "Twitter": "",
         "GitHub": ""
@@ -21,7 +21,7 @@
         "Team": "Program",
         "Name": "Julian",
         "Role": "Team - Core Member",
-        "Profile Image": "https://media.licdn.com/dms/image/C5103AQEVQRaDOKjWBg/profile-displayphoto-shrink_400_400/0/1573915261510?e=1716422400&v=beta&t=SPrccvtWQzbZRvSP5GUxFwJ0P54d3omZD2Bn1I8NzyA",
+        "Profile Image": "/src/assets/team/julian.jpg",
         "LinkedIn": "https://www.linkedin.com/in/julwrites/",
         "Twitter": "",
         "GitHub": "https://github.com/julwrites"
@@ -30,7 +30,7 @@
         "Team": "Program",
         "Name": "Joel Loh",
         "Role": "Team - Core Member",
-        "Profile Image": "https://media.licdn.com/dms/image/C5603AQEcUkasAV9vFA/profile-displayphoto-shrink_400_400/0/1660306160416?e=1716422400&v=beta&t=1LWZzQiS6Koz-ImgXiR9I7soa1P55XnFkAILmnBmnMg",
+        "Profile Image": "/src/assets/team/joel_loh.jpg",
         "LinkedIn": "https://www.linkedin.com/in/joel-loh-2074a6207/",
         "Twitter": "",
         "GitHub": ""
@@ -39,7 +39,7 @@
         "Team": "Venue, Logistics & Swag",
         "Name": "Qin Guan",
         "Role": "IC",
-        "Profile Image": "https://media.licdn.com/dms/image/D5603AQHlx-YyrpdXFg/profile-displayphoto-shrink_400_400/0/1686478225698?e=1716422400&v=beta&t=zXLLottaJQ3NE-AfzOcHl2AX2g74rXFBbriTz98L3qc",
+        "Profile Image": "/src/assets/team/qin_guan.jpg",
         "LinkedIn": "https://www.linkedin.com/in/qin-guan/",
         "Twitter": "",
         "GitHub": ""
@@ -48,7 +48,7 @@
         "Team": "Venue, Logistics & Swag",
         "Name": "Ethan",
         "Role": "Team - Core Member",
-        "Profile Image": "https://media.licdn.com/dms/image/D5603AQGYoSaQ8D3YWA/profile-displayphoto-shrink_400_400/0/1702874235715?e=1716422400&v=beta&t=N7JGGE895lpMmnI-5qSNfsOjrxIH4Tu5X10CuKk4DK8",
+        "Profile Image": "/src/assets/team/ethan.jpg",
         "LinkedIn": "https://www.linkedin.com/in/ethan-chew/",
         "Twitter": "",
         "GitHub": ""
@@ -57,7 +57,7 @@
         "Team": "Venue, Logistics & Swag",
         "Name": "Joel Tio",
         "Role": "Team - Core Member",
-        "Profile Image": "https://media.licdn.com/dms/image/C4E03AQE0eTKIXVqadw/profile-displayphoto-shrink_400_400/0/1517382406680?e=1716422400&v=beta&t=QugfSX23pE_Yv7Fe4nA-1dB1QUCKoQOhf6Dm4SMipms",
+        "Profile Image": "/src/assets/team/joel_tio.jpg",
         "LinkedIn": "https://www.linkedin.com/in/joel-tio/",
         "Twitter": "",
         "GitHub": ""
@@ -66,7 +66,7 @@
         "Team": "Registration, PR & Marketing",
         "Name": "Thu Ya",
         "Role": "IC",
-        "Profile Image": "https://media.licdn.com/dms/image/D5603AQGQwyN_GAKbrw/profile-displayphoto-shrink_400_400/0/1709917966253?e=1716422400&v=beta&t=ETnFdyQACLqXs7ZAjKzctBPcstAASttOL5gETveP3HQ",
+        "Profile Image": "/src/assets/team/thu_ya.jpg",
         "LinkedIn": "https://www.linkedin.com/in/thuyakyaw/",
         "Twitter": "https://twitter.com/iamthuya",
         "GitHub": ""
@@ -75,7 +75,7 @@
         "Team": "",
         "Name": "Yubin",
         "Role": "Marketing",
-        "Profile Image": "https://media.licdn.com/dms/image/D5603AQGkWr8EBKs_VQ/profile-displayphoto-shrink_400_400/0/1685354880234?e=1716422400&v=beta&t=1_6832I-3DOcVzwLYl9MseUGRbYKVPTyslPB1_Wt25Q",
+        "Profile Image": "/src/assets/team/yubin.jpg",
         "LinkedIn": "https://www.linkedin.com/in/yubin-jeong/",
         "Twitter": "",
         "GitHub": ""
@@ -84,7 +84,7 @@
         "Team": "",
         "Name": "James Tsui",
         "Role": "Registeration",
-        "Profile Image": "https://media.licdn.com/dms/image/C5103AQG1MciGsnOKKw/profile-displayphoto-shrink_800_800/0/1516951038556?e=1716422400&v=beta&t=gUsV6uVamXNj7Unui8V5i5kHHmyaJRLfcs2PmptaTTE",
+        "Profile Image": "/src/assets/team/james_tsui.jpg",
         "LinkedIn": "https://www.linkedin.com/in/james-tsui-45ab08120/",
         "Twitter": "",
         "GitHub": ""
@@ -93,7 +93,7 @@
         "Team": "",
         "Name": "Yeng",
         "Role": "Public Relations",
-        "Profile Image": "https://media.licdn.com/dms/image/D5603AQHJGOOGWBWK2Q/profile-displayphoto-shrink_400_400/0/1688033380559?e=1716422400&v=beta&t=1WPTynjJf-6HQGQpc2ds3PUqfMWQPdUqKLk_tIlEdzA",
+        "Profile Image": "/src/assets/team/yeng.jpg",
         "LinkedIn": "https://www.linkedin.com/in/yengrarugal/",
         "Twitter": "",
         "GitHub": ""
@@ -102,7 +102,7 @@
         "Team": "Design",
         "Name": "James Lim",
         "Role": "IC",
-        "Profile Image": "https://media.licdn.com/dms/image/D5603AQEDmlHeZUy7OQ/profile-displayphoto-shrink_400_400/0/1678092454032?e=1716422400&v=beta&t=zL8y339mLaLq7hWOR57qgWePwkvjZuh_6K-rF5zKUCo",
+        "Profile Image": "/src/assets/team/james_lim.jpg",
         "LinkedIn": "https://www.linkedin.com/in/james-lim-557bb0153/",
         "Twitter": "",
         "GitHub": ""
@@ -111,7 +111,7 @@
         "Team": "Design",
         "Name": "Yeji",
         "Role": "Team - Core Member",
-        "Profile Image": "https://media.licdn.com/dms/image/D5603AQEABZdlcAZvGw/profile-displayphoto-shrink_400_400/0/1700634557302?e=1716422400&v=beta&t=j6IiV0p1C24v4YPUpItTdPdyk0HnnNecKgASBSfilys",
+        "Profile Image": "/src/assets/team/yeji.jpg",
         "LinkedIn": "https://www.linkedin.com/in/sungyeji/",
         "Twitter": "",
         "GitHub": ""
@@ -120,7 +120,7 @@
         "Team": "Design",
         "Name": "Kevin Tan",
         "Role": "Team - Core Member",
-        "Profile Image": "https://media.licdn.com/dms/image/C5103AQHv3v3uHVEdjw/profile-displayphoto-shrink_400_400/0/1536081215713?e=1716422400&v=beta&t=YNXiblXjj2Q8xUUgdSCng54xSrfwHJAvzHx65ZfrxNA",
+        "Profile Image": "/src/assets/team/kevin.jpg",
         "LinkedIn": "https://www.linkedin.com/in/kevin-patrick-tan-95304b104/",
         "Twitter": "",
         "GitHub": ""
@@ -129,7 +129,7 @@
         "Team": "Design",
         "Name": "Kesler",
         "Role": "Team - Core Member",
-        "Profile Image": "https://lh3.googleusercontent.com/d/1LJi2fmbqzGo2HVuX6nwXqOWW6F30hnTt",
+        "Profile Image": "/src/assets/team/kesler.jpg",
         "LinkedIn": "https://www.linkedin.com/in/kesler-kok-4a70451b2/",
         "Twitter": "",
         "GitHub": ""
@@ -138,7 +138,7 @@
         "Team": "Food & Cleanup",
         "Name": "Juliana",
         "Role": "IC",
-        "Profile Image": "https://lh3.googleusercontent.com/d/1l1OwpGX6haymKJfLuAfkHDgocrDR4b3D",
+        "Profile Image": "/src/assets/team/juliana.jpg",
         "LinkedIn": "",
         "Twitter": "",
         "GitHub": ""
@@ -147,7 +147,7 @@
         "Team": "Food & Cleanup",
         "Name": "Pearlyn",
         "Role": "Team - Core Member",
-        "Profile Image": "https://lh3.googleusercontent.com/d/1bZ3500yCZ8lZwYEP5aAQ4uxo0auQ2CSI",
+        "Profile Image": "/src/assets/team/pearlyn.jpg",
         "LinkedIn": "https://www.linkedin.com/in/pearlyn-pang-8736b061/",
         "Twitter": "",
         "GitHub": ""
@@ -156,7 +156,7 @@
         "Team": "Food & Cleanup",
         "Name": "Ryanne",
         "Role": "Team - Core Member",
-        "Profile Image": "https://media.licdn.com/dms/image/D5603AQG23IyXbd35_A/profile-displayphoto-shrink_400_400/0/1677056609002?e=1716422400&v=beta&t=3msKpx7p_d8HC3EN0unGtoxiKtfRK_IKlD7Asdxv1k4",
+        "Profile Image": "/src/assets/team/ryanne.jpg",
         "LinkedIn": "https://www.linkedin.com/in/ryanneang/",
         "Twitter": "",
         "GitHub": ""
@@ -165,7 +165,7 @@
         "Team": "Sponsorship & Judges",
         "Name": "Roger",
         "Role": "IC",
-        "Profile Image": "https://media.licdn.com/dms/image/C5103AQFr-FVkFcvZHg/profile-displayphoto-shrink_400_400/0/1525308653494?e=1716422400&v=beta&t=ZOV2s_bqWw7OU08aAaHda64KF7rX6ltZl8QHZUqbKk8",
+        "Profile Image": "/src/assets/team/roger.jpg",
         "LinkedIn": "https://www.linkedin.com/in/rogeryeosm/",
         "Twitter": "https://twitter.com/ridiculousroger",
         "GitHub": ""
@@ -174,7 +174,7 @@
         "Team": "Sponsorship & Judges",
         "Name": "Johan",
         "Role": "Team - Core Member",
-        "Profile Image": "https://media.licdn.com/dms/image/C5603AQFDx4oULc-orw/profile-displayphoto-shrink_800_800/0/1517230382291?e=1716422400&v=beta&t=CVGFSSZ1N-4iHSDGHBC5mybkFPQ9USDgqoXMd_6EspU",
+        "Profile Image": "/src/assets/team/johan.jpg",
         "LinkedIn": "https://www.linkedin.com/in/johan-zhi-kang-kok-582417104/",
         "Twitter": "",
         "GitHub": ""
@@ -183,7 +183,7 @@
         "Team": "Sponsorship & Judges",
         "Name": "Estee",
         "Role": "Team - Core Member",
-        "Profile Image": "https://media.licdn.com/dms/image/D5603AQFv5FGZqrCVXg/profile-displayphoto-shrink_400_400/0/1703911575527?e=1716422400&v=beta&t=0HTZGbNHa1_1OIh72ZvpoXHWvSUi5c3eqrLj0Ai_1D0",
+        "Profile Image": "/src/assets/team/estee.jpg",
         "LinkedIn": "https://www.linkedin.com/in/estee-tey/",
         "Twitter": "https://twitter.com/estee_tey",
         "GitHub": "https://github.com/lyqht"
