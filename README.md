@@ -1,17 +1,62 @@
-# Astro Starter Kit: Basics
+# HackOMania 2024
 
-```sh
-pnpm create astro@latest -- --template basics
+This repository is used to deploy the official website for the annual hackathon organized by GeeksHacking. In 2024, the theme is "Innovate for Tomorrow: Building a Resilient Future."
+
+The website can be found at [hackomania2024.geekshacking.com](https://hackomania2024.geekshacking.com).
+
+## Project Overview
+
+This project is built using Astro, a modern static site generator, along with Tailwind CSS for styling. It showcases information about the hackathon, including challenges, prizes, schedule, venue details, and team information.
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js (v14 or later)
+- pnpm (v6 or later)
+
+### Installation
+
+1. Clone the repository:
+
+   ```
+   git clone https://github.com/your-username/hackomania-2024-website.git
+   cd hackomania-2024
+   ```
+
+2. Install dependencies:
+
+   ```
+   pnpm install
+   ```
+
+3. Run the development server:
+
+   ```
+   pnpm run dev
+   ```
+
+4. Open your browser and navigate to `http://localhost:4321`
+
+## Project Structure
+
+```
+/
+├── public/
+│   └── favicon.svg
+├── src/
+│   ├── components/
+│   ├── layouts/
+│   ├── pages/
+│   └── assets/
+├── astro.config.mjs
+├── package.json
+└── tsconfig.json
 ```
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+For more details on the project structure, refer to the "Project Structure" section in the README:
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
-
+````15:37:README.md
 ## 🚀 Project Structure
 
 Inside of your Astro project, you'll see the following folders and files:
@@ -35,20 +80,39 @@ Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page
 There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
 
 Any static assets, like images, can be placed in the `public/` directory.
+````
 
-## 🧞 Commands
+## Available Scripts
 
-All commands are run from the root of the project, from a terminal:
+```5:11:package.json
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+```
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `pnpm install`             | Installs dependencies                            |
-| `pnpm run dev`             | Starts local dev server at `localhost:4321`      |
-| `pnpm run build`           | Build your production site to `./dist/`          |
-| `pnpm run preview`         | Preview your build locally, before deploying     |
-| `pnpm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `pnpm run astro -- --help` | Get help using the Astro CLI                     |
+## Deployment
 
-## 👀 Want to learn more?
+We used Cloudflare Pages to deploy the website.
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+To deploy the project on alternative platforms, you can use the following command to generate the static files for deploying to any static hosting service:
+
+```
+pnpm run build
+```
+
+## License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+## Contact
+
+For any inquiries, please contact:
+
+- General: contact@geekshacking.com
+- Sponsorship: sponsor@geekshacking.com
+
+Join our [Telegram channel](https://t.me/+HlJIBuu9isA2ZWQ1) for updates and discussions.
